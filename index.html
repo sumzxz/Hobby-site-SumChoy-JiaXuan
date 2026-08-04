@@ -35,95 +35,115 @@
         </nav>
     </header>
 
-    <main>
+<main>
 
-      <!-- ===== HERO ===== -->
-      <header class="hero pt-5">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-7">
-              <span class="stamp mb-3">✈ 9 countries and counting</span>
-              <h1 class="my-4">Somewhere new,<br>every chance I get.</h1>
-              <p class="text-muted-custom fs-5 mb-4" style="max-width: 48ch;">
-                This is my travel diary — the trips, the food, the wrong turns
-                that turned into the best part of the story. Built as a portfolio
-                to swap tips with other people who'd rather be at the airport
-                than at home.
-              </p>
-              <div class="d-flex gap-3 flex-wrap">
-                <a href="sumchoy-hobbies(1).html" class="btn btn-wl-primary">See my trips</a>
-                <a href="about.html" class="btn btn-wl-outline">Travel with me</a>
-              </div>
+  <!-- ===== HERO + STATS + INTRO HEADING — one continuous background ===== -->
+  <div class="intro-block">
+
+    <header class="hero pt-5 pb-0">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="stamp mb-3">👋 Two friends, two hobbies</span>
+            <h1 class="my-4">We're Sum Choy<br>and Jia Xuan.</h1>
+            <p class="text-muted-custom fs-5 mb-4" style="max-width: 48ch;">
+              [Write 2–3 sentences here: who you both are, what this site is
+              for, and why you're sharing your hobbies.]
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="sumchoy-hobbies(1).html" class="btn btn-wl-primary">See our hobbies</a>
+              <a href="contact.html" class="btn btn-wl-outline">Join us</a>
             </div>
-            <div class="col-lg-5">
-              <img src="https://picsum.photos/seed/wanderhero/700/560" alt="Mountain trail at sunrise from a recent trip" class="img-fluid rounded-4 shadow">
+          </div>
+          <div class="col-lg-5">
+            <img src="assets/sumchoy/image/JIA_SPEN.jpg" alt="Sum Choy and Jia Xuan" class="img-fluid rounded-4 shadow">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STATS STRIP — no separate background anymore, just spacing -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <div class="figure">9</div>
+              <div class="label">Countries</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <div class="figure">27</div>
+              <div class="label">Cities</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <div class="figure">4</div>
+              <div class="label">Years travelling</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <div class="figure">3</div>
+              <div class="label">Lost passports*</div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <!-- ===== STATS STRIP ===== -->
-      <section class="py-5 section-panel">
-        <div class="container">
-          <div class="row g-4 text-center">
-            <div class="col-6 col-md-3">
-              <div class="stat">
-                <div class="figure">9</div>
-                <div class="label">Countries</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="stat">
-                <div class="figure">27</div>
-                <div class="label">Cities</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="stat">
-                <div class="figure">4</div>
-                <div class="label">Years travelling</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="stat">
-                <div class="figure">3</div>
-                <div class="label">Lost passports*</div>
-              </div>
+    <!-- HEADING moved up into the same background block -->
+    <div class="container pb-5">
+      <p class="eyebrow mb-2">Recent trips</p>
+      <h2 class="mb-0">A few places worth the jet lag</h2>
+    </div>
+
+  </div>
+
+  <!-- ===== TRIP CARDS — fresh section, new background starts here ===== -->
+  <section class="section section-panel">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card-wl">
+            <img src="https://picsum.photos/seed/wandertrip1/500/400" alt="Rice terraces in Northern Vietnam">
+            <div class="card-body">
+              <div class="loc">Sa Pa, Vietnam</div>
+              <h3 class="mt-1 mb-2">Terraces and tea</h3>
+              <p class="text-muted-custom mb-0">Four days trekking between
+              villages, sleeping in homestays along the way.</p>
             </div>
           </div>
         </div>
-      </section>
+        <div class="col-md-4">
+          <div class="card-wl">
+            <img src="https://picsum.photos/seed/wandertrip2/500/400" alt="Old town street in Lisbon, Portugal">
+            <div class="card-body">
+              <div class="loc">Lisbon, Portugal</div>
+              <h3 class="mt-1 mb-2">Tiles and tram lines</h3>
+              <p class="text-muted-custom mb-0">Got lost in Alfama on
+              purpose. Best decision of the whole trip.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-wl">
+            <img src="https://picsum.photos/seed/wandertrip3/500/400" alt="Desert dunes at sunset in Jordan">
+            <div class="card-body">
+              <div class="loc">Wadi Rum, Jordan</div>
+              <h3 class="mt-1 mb-2">A night in the desert</h3>
+              <p class="text-muted-custom mb-0">Camped under more stars than
+              I've ever seen in my life. No regrets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- ===== FEATURED TRIPS ===== -->
-      <section class="section">
-        <div class="container">
-          <p class="eyebrow mb-2">Recent trips</p>
-          <h2 class="mb-5">A few places worth the jet lag</h2>
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="card-wl">
-                <img src="https://picsum.photos/seed/wandertrip1/500/400" alt="Rice terraces in Northern Vietnam">
-                <div class="card-body">
-                  <div class="loc">Sa Pa, Vietnam</div>
-                  <h3 class="mt-1 mb-2">Terraces and tea</h3>
-                  <p class="text-muted-custom mb-0">Four days trekking between
-                  villages, sleeping in homestays along the way.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card-wl">
-                <img src="https://picsum.photos/seed/wandertrip2/500/400" alt="Old town street in Lisbon, Portugal">
-                <div class="card-body">
-                  <div class="loc">Lisbon, Portugal</div>
-                  <h3 class="mt-1 mb-2">Tiles and tram lines</h3>
-                  <p class="text-muted-custom mb-0">Got lost in Alfama on
-                  purpose. Best decision of the whole trip.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card-wl">
+</main>             <div class="card-wl">
                 <img src="https://picsum.photos/seed/wandertrip3/500/400" alt="Desert dunes at sunset in Jordan">
                 <div class="card-body">
                   <div class="loc">Wadi Rum, Jordan</div>
