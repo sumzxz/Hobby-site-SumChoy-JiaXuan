@@ -1,0 +1,19 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Style the navigation links */
+nav a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
