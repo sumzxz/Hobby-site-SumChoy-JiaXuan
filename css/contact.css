@@ -1,0 +1,52 @@
+:root {
+  --primary-navy: #0d2137;
+  --gold-accent: #D9A441;
+  --gold-hover: #b8862d;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+h1, h2, h3, .brand-title {
+  font-family: 'Fraunces', serif;
+}
+
+.navbar-fishing {
+  background-color: var(--primary-navy);
+  border-bottom: 2px solid var(--gold-accent);
+}
+
+.contact-card {
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 0 0.25rem rgba(217, 164, 65, 0.25);
+}
+
+.btn-gold {
+  background-color: var(--gold-accent);
+  color: var(--primary-navy);
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+
+  transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  color: #ffffff;
+}
+
+.footer-fishing {
+  background-color: var(--primary-navy);
+  color: rgba(255, 255, 255, 0.7);
+}

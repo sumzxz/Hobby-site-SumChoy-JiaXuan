@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tight Lines Angling Co. — Saltwater Angling & Marine Life</title>
+<title>Saltwater Angling & Marine Life — Empty</title>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,17 +20,19 @@
 <body>
 
 <!-- NAVIGATION BAR -->
-<nav class="navbar navbar-expand-lg navbar-fishing sticky-top">
+<nav class="navbar navbar-expand-lg navbar-fishing sticky-top py-3">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Tight Lines<span>.</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" style="border-color:#D9A441;">
+    <a class="navbar-brand" href="index.html">Empty</a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="fishing.html">Angling Guide</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Join Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">ABOUT US</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+        <li class="nav-item"><a class="nav-link" href="sumchoy-hobbies(1).html">SUM CHOY (HOBBIES)</a></li>
+        <li class="nav-item"><a class="nav-link active" href="jiaxuan-hobbies(1).html">JIA XUAN (HOBBIES)</a></li>
       </ul>
     </div>
   </div>
@@ -51,7 +53,7 @@
 </header>
 
 <!-- MAIN CONTENT SECTION -->
-<main class="section">
+<main class="section" id="about">
   <div class="container">
 
     <!-- 1. COMMON FISHING SPOTS -->
@@ -87,15 +89,15 @@
       <!-- Filter Controls -->
       <div class="mb-4">
         <p class="icon-mono mb-2">Filter saltwater species by difficulty:</p>
-        <button class="filter-btn btn btn-outline-primary btn-sm me-1 active" data-filter="all">All Species</button>
-        <button class="filter-btn btn btn-outline-primary btn-sm me-1" data-filter="Beginner">Beginner</button>
-        <button class="filter-btn btn btn-outline-primary btn-sm me-1" data-filter="Intermediate">Intermediate</button>
-        <button class="filter-btn btn btn-outline-primary btn-sm" data-filter="Advanced">Advanced</button>
+        <button class="filter-btn me-1 active" data-filter="all">All Species</button>
+        <button class="filter-btn me-1" data-filter="Beginner">Beginner</button>
+        <button class="filter-btn me-1" data-filter="Intermediate">Intermediate</button>
+        <button class="filter-btn" data-filter="Advanced">Advanced</button>
       </div>
 
       <div class="table-responsive">
-        <table class="table table-hover align-middle border">
-          <thead class="table-primary">
+        <table class="table table-hover align-middle border table-fishing">
+          <thead>
             <tr>
               <th scope="col">Species Name</th>
               <th scope="col">Nickname</th>
@@ -203,7 +205,7 @@
 
       <div class="table-responsive">
         <table class="table table-fishing table-bordered align-middle">
-          <thead class="table-light">
+          <thead>
             <tr>
               <th>Item</th>
               <th>Purpose</th>
@@ -248,7 +250,7 @@
     <div class="text-center pt-4 border-top">
       <h3 class="h4 mb-2">Ready to Cast Into the Saltwater?</h3>
       <p class="text-muted mb-4">Have questions about coastal fishing spots or want to join a trip with our club members?</p>
-      <a href="contact.html" class="btn btn-primary btn-lg px-4 py-2 shadow-sm">
+      <a href="contact.html?hobby=fishing" class="btn btn-gold btn-lg px-4 py-2 shadow-sm">
         Get in Touch / Join Our Club <i class="bi bi-arrow-right-circle ms-2"></i>
       </a>
     </div>
@@ -257,15 +259,39 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="footer-fishing py-4 border-top bg-light mt-5">
+<footer class="footer-fishing py-4 text-center mt-5">
   <div class="container d-flex flex-wrap justify-content-between align-items-center">
-    <p class="mb-0 text-muted">&copy; 2026 Tight Lines Angling Co. &middot; A student project for IT1X15.</p>
-    <p class="mb-0"><a href="contact.html" class="text-decoration-none">Get in touch</a></p>
+    <p class="mb-0">&copy; 2026 Empty &middot; All rights reserved.</p>
+    <p class="mb-0"><a href="contact.html?hobby=fishing" class="text-decoration-none">Get in touch</a></p>
   </div>
 </footer>
 
-<!-- Bootstrap Bundle JS & Main JS Script -->
+<!-- Bootstrap Bundle JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+
+<!-- Filter Script for Species Table -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const speciesRows = document.querySelectorAll('tbody tr[data-difficulty]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        speciesRows.forEach(row => {
+          if (filterValue === 'all' || row.getAttribute('data-difficulty') === filterValue) {
+            row.classList.remove('species-hidden');
+          } else {
+            row.classList.add('species-hidden');
+          }
+        });
+      });
+    });
+  });
+</script>
 </body>
 </html>

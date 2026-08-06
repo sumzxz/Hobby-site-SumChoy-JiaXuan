@@ -1,1 +1,122 @@
-<ht>Form</ht>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Empty</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=JetBrains+Mono:wght@400;600;700&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-fishing py-3">
+    <div class="container">
+      <a class="navbar-brand" href="jiaxuan-hobbies(1).html">Empty</a>
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="jiaxuan-hobbies(1).html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="sumchoy-hobbies(1).html">SUM CHOY (HOBBIES)</a></li>
+          <li class="nav-item"><a class="nav-link" href="jiaxuan-hobbies(1).html">JIA XUAN (HOBBIES)</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero py-5 text-center">
+    <div class="container hero-content">
+      <span class="eyebrow">Get In Touch</span>
+      <h1 class="mt-2">Contact & Sign-Up</h1>
+      <p class="lead mx-auto" style="max-width: 35rem;">
+        Have questions or want to join one of our clubs? Fill out the form below and we'll get back to you shortly.
+      </p>
+    </div>
+  </header>
+
+  <!-- Form Section -->
+  <main class="section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <div class="card-fishing">
+            <form class="form-fishing" action="#" method="POST">
+              
+              <!-- Dynamic Hobby Selection -->
+              <div class="mb-4">
+                <label for="hobbySelect" class="form-label">Select Club / Hobby</label>
+                <select class="form-select" id="hobbySelect" name="hobby">
+                  <option value="fishing">Angling & Fishing</option>
+                  <option value="travelling">Travelling & Outdoor Expeditions</option>
+                </select>
+              </div>
+
+              <!-- Name Field -->
+              <div class="mb-3">
+                <label for="userName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="userName" name="name" placeholder="John Doe" required>
+              </div>
+
+              <!-- Email Field -->
+              <div class="mb-3">
+                <label for="userEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="userEmail" name="email" placeholder="john@example.com" required>
+              </div>
+
+              <!-- Message Field -->
+              <div class="mb-4">
+                <label for="userMessage" class="form-label">Message / Inquiry</label>
+                <textarea class="form-control" id="userMessage" name="message" rows="5" placeholder="Let us know how we can help or why you'd like to join..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-gold w-100">Send Message</button>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-fishing text-center py-4">
+    <div class="container">
+      <p class="mb-0">&copy; Empty. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Dynamic URL Parameter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedHobby = urlParams.get('hobby');
+
+      if (selectedHobby) {
+        const selectElement = document.getElementById('hobbySelect');
+        if (selectElement) {
+          selectElement.value = selectedHobby;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
