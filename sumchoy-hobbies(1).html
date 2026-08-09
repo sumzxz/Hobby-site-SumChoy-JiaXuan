@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Choy — Travelling</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-wl navbar-wl--static fixed-top py-3">
+          <div class="container d-flex align-items-center justify-content-between">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+              <img src="assets/logo.svg" alt="Friends & Hobbies logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+              <div class="navbar-nav nav-links-group">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="sumchoy-hobbies(1).html" class="nav-link active">Sum Choy (Hobbies)</a>
+                <a href="jiaxuan-hobbies(1).html" class="nav-link">Jia Xuan (Hobbies)</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <main>
+
+      <header class="hero page-hero pb-3">
+        <div class="container">
+          <p class="eyebrow mb-2">Sum Choy's hobby</p>
+          <h1 class="mb-3">Travelling</h1>
+          <p class="text-muted-custom fs-5" style="max-width: 60ch;">
+            Four countries, one backpack that's always slightly too full.
+            Click a pin to explore where I've been.
+          </p>
+        </div>
+      </header>
+
+      <!-- ===== INTERACTIVE MAP + DETAILS PANEL ===== -->
+      <section class="section pt-3">
+        <div class="container">
+          <div class="row g-5 align-items-start">
+
+            <!-- MAP -->
+            <div class="col-lg-7">
+              <div class="map-frame">
+                <svg viewBox="0 0 600 420" class="world-map-svg">
+                  <!-- Simplified landmass shapes — stylised, not geographically exact -->
+                  <path d="M60 260 Q120 200 220 220 Q280 180 360 210 Q420 190 480 230 Q540 250 520 300 Q460 340 380 320 Q300 350 220 330 Q140 340 90 310 Q50 290 60 260 Z" class="map-landmass"/>
+                  <path d="M380 100 Q430 80 470 110 Q490 140 460 160 Q420 170 390 150 Q365 125 380 100 Z" class="map-landmass"/>
+
+                  <!-- Location pins -->
+                  <g class="map-pin" data-index="0" tabindex="0" role="button" aria-label="Vietnam">
+                    <circle cx="270" cy="270" r="14" class="pin-pulse"/>
+                    <circle cx="270" cy="270" r="7" class="pin-dot"/>
+                  </g>
+                  <g class="map-pin" data-index="1" tabindex="0" role="button" aria-label="Hong Kong">
+                    <circle cx="360" cy="250" r="14" class="pin-pulse"/>
+                    <circle cx="360" cy="250" r="7" class="pin-dot"/>
+                  </g>
+                  <g class="map-pin" data-index="2" tabindex="0" role="button" aria-label="China">
+                    <circle cx="330" cy="200" r="14" class="pin-pulse"/>
+                    <circle cx="330" cy="200" r="7" class="pin-dot"/>
+                  </g>
+                  <g class="map-pin" data-index="3" tabindex="0" role="button" aria-label="Japan">
+                    <circle cx="430" cy="130" r="14" class="pin-pulse"/>
+                    <circle cx="430" cy="130" r="7" class="pin-dot"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- DETAILS PANEL -->
+            <div class="col-lg-5">
+              <div class="map-details-panel">
+                <p class="eyebrow mb-2" id="map-country-label">Vietnam</p>
+                <h2 class="mb-3" id="map-country-place">Sa Pa</h2>
+                <p class="text-muted-custom mb-3" id="map-country-desc">
+                  Four days trekking between rice terrace villages, sleeping
+                  in homestays and eating more sticky rice than I thought
+                  possible.
+                </p>
+                <div class="profile-tags mb-4">
+                  <span class="profile-tag" id="map-country-date">Visited March 2023</span>
+                </div>
+
+                <img id="map-country-photo" src="assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg" alt="Vietnam" class="map-details-photo">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FULL GALLERY (all 5 photos of the selected country) ===== -->
+      <section class="section section-panel">
+        <div class="container">
+          <p class="eyebrow mb-2">Gallery</p>
+          <h2 class="mb-4" id="gallery-heading">Vietnam, in photos</h2>
+          <div class="row g-3" id="photo-gallery-grid">
+            <!-- filled in by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== VIDEO ===== -->
+      <section class="section">
+        <div class="container">
+          <p class="eyebrow mb-2">On the road</p>
+          <h2 class="mb-4">A short clip from the trip</h2>
+          <video controls class="w-100 rounded-4" style="max-height: 480px; object-fit: cover;">
+            <source src="assets/sumchoy-assets/video/vietnam/vietnam-clip.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer-wl">
+        <div class="container d-flex flex-wrap justify-content-between gap-2">
+          <span>&copy; 2026 Web Dev Project Team</span>
+          <span>Built with Bootstrap 5</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/nav-scramble.js"></script>
+    <script src="js/travel-map.js"></script>
+</body>
+</html>
