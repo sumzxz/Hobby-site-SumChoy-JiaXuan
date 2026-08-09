@@ -6,10 +6,20 @@
   --text-dark: #212529;
 }
 
+/* Global Page Setup & Background */
+html, body {
+  min-height: 100vh;
+  margin: 0;
+}
+
 body {
   font-family: 'Work Sans', sans-serif;
-  color: var(--text-dark);
-  background-color: #ffffff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/jiaxuan -assets/water-background.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,6 +32,45 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.85rem;
+}
+
+/* Make Section Wrappers Transparent */
+.hero, .section, main, #about {
+  background: transparent !important;
+}
+
+.hero {
+  position: relative;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.contour-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.max-w-700 {
+  max-width: 700px;
+}
+
+/* Section Card Overlay */
+.section-card {
+  background-color: rgba(15, 23, 42, 0.75) !important;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Navigation */
@@ -50,53 +99,22 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--gold-accent) !important;
 }
 
-/* Hero Banner */
-.hero {
-  position: relative;
-  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-  color: #ffffff;
-  overflow: hidden;
-}
-
-.contour-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.max-w-700 {
-  max-width: 700px;
-}
-
 /* Filter Buttons & Dynamic Visibility */
 .filter-btn {
-  background-color: #ffffff;
-  border: 1px solid #ced4da;
-  color: var(--text-dark);
-  padding: 0.375rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
   border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.filter-btn:hover {
-  background-color: #e9ecef;
-}
-
+.filter-btn:hover,
 .filter-btn.active {
-  background-color: var(--primary-navy);
-  color: #ffffff;
-  border-color: var(--primary-navy);
+  background: #D9A441;
+  color: #000;
+  font-weight: 600;
+  border-color: #D9A441;
 }
 
 .species-hidden {
@@ -104,14 +122,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Tables */
-.table-fishing thead {
-  background-color: var(--primary-navy);
-  color: #ffffff;
+.table-fishing {
+  color: #ffffff !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
-.table-fishing thead th {
+.table-fishing th {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  color: #D9A441 !important;
   font-family: 'Fraunces', serif;
-  border-bottom: 2px solid var(--gold-accent);
+}
+
+.table-fishing td {
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Buttons */

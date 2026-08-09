@@ -1,4 +1,4 @@
-const paragraphs = document.querySelectorAll('.manifesto-text p');
+const paragraphs = document.querySelectorAll('.manifesto-text, .manifesto-text span');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
