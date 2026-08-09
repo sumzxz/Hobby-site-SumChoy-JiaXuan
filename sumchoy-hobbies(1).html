@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-wl navbar-wl--static fixed-top py-3">
           <div class="container d-flex align-items-center justify-content-between">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-              <img src="assets/logo.svg" alt="Friends & Hobbies logo" class="navbar-logo">
+              <img src="assets\Logo_friends&hobbies.svg" alt="Friends & Hobbies logo" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
 
       <header class="hero page-hero pb-3">
         <div class="container">
-          <p class="eyebrow mb-2">Sum Choy's hobby</p>
+          <p class="eyebrow mb-2">Around The World</p>
           <h1 class="mb-3">Travelling</h1>
           <p class="text-muted-custom fs-5" style="max-width: 60ch;">
             Four countries, one backpack that's always slightly too full.
@@ -47,43 +47,14 @@
         </div>
       </header>
 
-      <!-- ===== INTERACTIVE MAP + DETAILS PANEL ===== -->
+<!-- ===== INTERACTIVE MAP + DETAILS PANEL ===== -->
       <section class="section pt-3">
         <div class="container">
           <div class="row g-5 align-items-start">
 
-            <!-- MAP -->
+            <!-- LEFT: details panel + video -->
             <div class="col-lg-7">
-              <div class="map-frame">
-                <svg viewBox="0 0 600 420" class="world-map-svg">
-                  <!-- Simplified landmass shapes — stylised, not geographically exact -->
-                  <path d="M60 260 Q120 200 220 220 Q280 180 360 210 Q420 190 480 230 Q540 250 520 300 Q460 340 380 320 Q300 350 220 330 Q140 340 90 310 Q50 290 60 260 Z" class="map-landmass"/>
-                  <path d="M380 100 Q430 80 470 110 Q490 140 460 160 Q420 170 390 150 Q365 125 380 100 Z" class="map-landmass"/>
-
-                  <!-- Location pins -->
-                  <g class="map-pin" data-index="0" tabindex="0" role="button" aria-label="Vietnam">
-                    <circle cx="270" cy="270" r="14" class="pin-pulse"/>
-                    <circle cx="270" cy="270" r="7" class="pin-dot"/>
-                  </g>
-                  <g class="map-pin" data-index="1" tabindex="0" role="button" aria-label="Hong Kong">
-                    <circle cx="360" cy="250" r="14" class="pin-pulse"/>
-                    <circle cx="360" cy="250" r="7" class="pin-dot"/>
-                  </g>
-                  <g class="map-pin" data-index="2" tabindex="0" role="button" aria-label="China">
-                    <circle cx="330" cy="200" r="14" class="pin-pulse"/>
-                    <circle cx="330" cy="200" r="7" class="pin-dot"/>
-                  </g>
-                  <g class="map-pin" data-index="3" tabindex="0" role="button" aria-label="Japan">
-                    <circle cx="430" cy="130" r="14" class="pin-pulse"/>
-                    <circle cx="430" cy="130" r="7" class="pin-dot"/>
-                  </g>
-                </svg>
-              </div>
-            </div>
-
-            <!-- DETAILS PANEL -->
-            <div class="col-lg-5">
-              <div class="map-details-panel">
+              <div class="map-details-panel mb-4">
                 <p class="eyebrow mb-2" id="map-country-label">Vietnam</p>
                 <h2 class="mb-3" id="map-country-place">Sa Pa</h2>
                 <p class="text-muted-custom mb-3" id="map-country-desc">
@@ -94,8 +65,71 @@
                 <div class="profile-tags mb-4">
                   <span class="profile-tag" id="map-country-date">Visited March 2023</span>
                 </div>
-
                 <img id="map-country-photo" src="assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg" alt="Vietnam" class="map-details-photo">
+              </div>
+
+              <video controls class="w-100 rounded-4" id="map-country-video" style="max-height: 320px; object-fit: cover;">
+                <source src="assets/sumchoy-assets/video/vietnam/vietnam-clip.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <!-- RIGHT: small globe -->
+            <div class="col-lg-5">
+              <div class="map-frame map-frame--small">
+                <svg viewBox="0 0 500 500" class="world-map-svg">
+                    <circle cx="250" cy="250" r="220" class="globe-sphere"/>
+
+                    <path d="M180 200 Q220 180 260 195 Q290 210 270 240 Q240 260 200 250 Q170 230 180 200 Z" class="globe-landmass"/>
+                    <path d="M300 160 Q350 145 390 170 Q400 195 370 210 Q335 215 310 195 Q295 175 300 160 Z" class="globe-landmass"/>
+                    <path d="M240 300 Q280 290 310 310 Q315 335 285 345 Q250 340 235 320 Q230 305 240 300 Z" class="globe-landmass"/>
+
+                    <ellipse cx="250" cy="120" rx="205" ry="28" class="globe-grid"/>
+                    <ellipse cx="250" cy="190" rx="218" ry="55" class="globe-grid"/>
+                    <ellipse cx="250" cy="250" rx="220" ry="70" class="globe-grid"/>
+                    <ellipse cx="250" cy="310" rx="218" ry="55" class="globe-grid"/>
+                    <ellipse cx="250" cy="380" rx="205" ry="28" class="globe-grid"/>
+                    <ellipse cx="250" cy="250" rx="220" ry="220" class="globe-grid"/>
+                    <ellipse cx="250" cy="250" rx="150" ry="220" class="globe-grid"/>
+                    <ellipse cx="250" cy="250" rx="70" ry="220" class="globe-grid"/>
+                    <line x1="250" y1="30" x2="250" y2="470" class="globe-grid"/>
+
+                    <g class="map-pin" data-index="0" tabindex="0" role="button" aria-label="Vietnam">
+                        <path d="M290 275 C298 275 304 281 304 289 C304 299 290 313 290 313 C290 313 276 299 276 289 C276 281 282 275 290 275 Z" class="pin-shape"/>
+                        <circle cx="290" cy="289" r="3.5" class="pin-shape-hole"/>
+                        <g class="pin-tooltip">
+                        <rect x="255" y="245" width="70" height="22" rx="5" class="pin-tooltip-bg"/>
+                        <text x="290" y="260" text-anchor="middle" class="pin-tooltip-text">Vietnam</text>
+                        </g>
+                    </g>
+
+                    <g class="map-pin" data-index="1" tabindex="0" role="button" aria-label="Hong Kong">
+                        <path d="M330 225 C338 225 344 231 344 239 C344 249 330 263 330 263 C330 263 316 249 316 239 C316 231 322 225 330 225 Z" class="pin-shape"/>
+                        <circle cx="330" cy="239" r="3.5" class="pin-shape-hole"/>
+                        <g class="pin-tooltip">
+                        <rect x="285" y="195" width="90" height="22" rx="5" class="pin-tooltip-bg"/>
+                        <text x="330" y="210" text-anchor="middle" class="pin-tooltip-text">Hong Kong</text>
+                        </g>
+                    </g>
+
+                    <g class="map-pin" data-index="2" tabindex="0" role="button" aria-label="China">
+                        <path d="M300 165 C308 165 314 171 314 179 C314 189 300 203 300 203 C300 203 286 189 286 179 C286 171 292 165 300 165 Z" class="pin-shape"/>
+                        <circle cx="300" cy="179" r="3.5" class="pin-shape-hole"/>
+                        <g class="pin-tooltip">
+                        <rect x="268" y="135" width="64" height="22" rx="5" class="pin-tooltip-bg"/>
+                        <text x="300" y="150" text-anchor="middle" class="pin-tooltip-text">China</text>
+                        </g>
+                    </g>
+
+                    <g class="map-pin" data-index="3" tabindex="0" role="button" aria-label="Japan">
+                        <path d="M360 145 C368 145 374 151 374 159 C374 169 360 183 360 183 C360 183 346 169 346 159 C346 151 352 145 360 145 Z" class="pin-shape"/>
+                        <circle cx="360" cy="159" r="3.5" class="pin-shape-hole"/>
+                        <g class="pin-tooltip">
+                        <rect x="328" y="115" width="64" height="22" rx="5" class="pin-tooltip-bg"/>
+                        <text x="360" y="130" text-anchor="middle" class="pin-tooltip-text">Japan</text>
+                        </g>
+                    </g>
+                </svg>
               </div>
             </div>
 
@@ -114,18 +148,6 @@
         </div>
       </section>
 
-      <!-- ===== VIDEO ===== -->
-      <section class="section">
-        <div class="container">
-          <p class="eyebrow mb-2">On the road</p>
-          <h2 class="mb-4">A short clip from the trip</h2>
-          <video controls class="w-100 rounded-4" style="max-height: 480px; object-fit: cover;">
-            <source src="assets/sumchoy-assets/video/vietnam/vietnam-clip.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
-
     </main>
 
     <footer class="footer-wl">
@@ -139,5 +161,6 @@
     <script src="js/main.js"></script>
     <script src="js/nav-scramble.js"></script>
     <script src="js/travel-map.js"></script>
+    <script src="js/fish-cursor.js"></script>
 </body>
 </html>

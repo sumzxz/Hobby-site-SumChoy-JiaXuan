@@ -105,3 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   selectDestination(0);
 });
+function selectDestination(index) {
+  const dest = destinations[index];
+  // ...existing code above stays the same...
+
+  const videoEl = document.getElementById("map-country-video");
+  if (videoEl && dest.video) {
+    videoEl.querySelector("source").src = dest.video;
+    videoEl.load();
+  }
+
+  renderGallery(dest);
+}
