@@ -20,6 +20,7 @@ body {
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   color: #ffffff;
+  padding-top: 80px; /* Prevents hero section from being covered by fixed navbar */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,7 +35,43 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
 }
 
-/* Make Section Wrappers Transparent */
+/* TRANSPARENT FLOATING NAVBAR */
+.navbar-wl {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: transparent;
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* SOLID COLOR WHEN TOUCHING CONTENT / SCROLLED */
+.navbar-wl.scrolled {
+  background-color: var(--primary-navy) !important; /* Matches your navy card/theme background */
+  border-bottom: 2px solid var(--gold-accent) !important; /* Solid gold line matching the accent border */
+}
+
+.navbar-wl .navbar-brand {
+  color: #fff !important;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+}
+
+.navbar-wl .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-wl.scrolled .nav-link:hover,
+.navbar-wl.scrolled .nav-link.active {
+  color: var(--gold-accent) !important; /* Highlights active links in gold when solid */
+}
+/* Section Wrappers & Overlay Cards */
 .hero, .section, main, #about {
   background: transparent !important;
 }
@@ -64,39 +101,12 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 700px;
 }
 
-/* Section Card Overlay */
 .section-card {
   background-color: rgba(15, 23, 42, 0.75) !important;
   border-radius: 12px;
   backdrop-filter: blur(6px);
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Navigation */
-.navbar-fishing {
-  background-color: var(--primary-navy);
-  border-bottom: 2px solid var(--gold-accent);
-}
-
-.navbar-fishing .navbar-brand {
-  font-family: 'Fraunces', serif;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.navbar-fishing .nav-link {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  transition: color 0.2s ease;
-}
-
-.navbar-fishing .nav-link:hover,
-.navbar-fishing .nav-link.active {
-  color: var(--gold-accent) !important;
 }
 
 /* Filter Buttons & Dynamic Visibility */
@@ -164,4 +174,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-fishing a:hover {
   color: #ffffff;
+}
+
+/* Custom Fish Cursor & Droplets */
+body.fish-cursor-active,
+body.fish-cursor-active * {
+  cursor: none !important; /* Hides standard mouse cursor */
+}
+
+.fish-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.water-droplet {
+  position: fixed;
+  pointer-events: none;
+  width: 6px;
+  height: 6px;
+  background: rgba(217, 164, 65, 0.7);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: dropFade 0.6s ease-out forwards;
+  z-index: 9998;
+}
+
+@keyframes dropFade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -15px) scale(2.5);
+  }
 }
