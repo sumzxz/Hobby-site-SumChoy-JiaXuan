@@ -5,50 +5,48 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.getElementById("country-next");
   if (!label || !photoEl) return;
 
-  // Update these paths/filenames to match your real photos —
-  // 5 photos listed per country, in whatever order you like.
   const countries = [
-    {
-      name: "Vietnam",
-      photos: [
-        "assets/sumchoy/vietnam/photo1.jpg",
-        "assets/sumchoy/vietnam/photo2.jpg",
-        "assets/sumchoy/vietnam/photo3.jpg",
-        "assets/sumchoy/vietnam/photo4.jpg",
-        "assets/sumchoy/vietnam/photo5.jpg",
-      ],
-    },
-    {
-      name: "Hong Kong",
-      photos: [
-        "assets/sumchoy/hongkong/photo1.jpg",
-        "assets/sumchoy/hongkong/photo2.jpg",
-        "assets/sumchoy/hongkong/photo3.jpg",
-        "assets/sumchoy/hongkong/photo4.jpg",
-        "assets/sumchoy/hongkong/photo5.jpg",
-      ],
-    },
-    {
-      name: "China",
-      photos: [
-        "assets/sumchoy/china/photo1.jpg",
-        "assets/sumchoy/china/photo2.jpg",
-        "assets/sumchoy/china/photo3.jpg",
-        "assets/sumchoy/china/photo4.jpg",
-        "assets/sumchoy/china/photo5.jpg",
-      ],
-    },
-    {
-      name: "Japan",
-      photos: [
-        "assets/sumchoy/japan/photo1.jpg",
-        "assets/sumchoy/japan/photo2.jpg",
-        "assets/sumchoy/japan/photo3.jpg",
-        "assets/sumchoy/japan/photo4.jpg",
-        "assets/sumchoy/japan/photo5.jpg",
-      ],
-    },
-  ];
+  {
+    name: "Vietnam",
+    photos: [
+      "assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg",
+      "assets/sumchoy-assets/image/Vietnam/viet-street.jpeg",
+      "assets/sumchoy-assets/image/Vietnam/viet-motor.jpeg",
+      "assets/sumchoy-assets/image/Vietnam/viet-raincoat.jpeg",
+      "assets/sumchoy-assets/image/Vietnam/viet-fluteboy.jpeg",
+    ],
+  },
+  {
+    name: "Hong Kong",
+    photos: [
+      "assets/sumchoy-assets/image/hongkong/photo1.jpg",
+      "assets/sumchoy-assets/image/hongkong/photo2.jpg",
+      "assets/sumchoy-assets/image/hongkong/photo3.jpg",
+      "assets/sumchoy-assets/image/hongkong/photo4.jpg",
+      "assets/sumchoy-assets/image/hongkong/photo5.jpg",
+    ],
+  },
+  {
+    name: "China",
+    photos: [
+      "assets/sumchoy-assets/image/China/photo1.jpg",
+      "assets/sumchoy-assets/image/China/photo2.jpg",
+      "assets/sumchoy-assets/image/China/photo3.jpg",
+      "assets/sumchoy-assets/image/China/photo4.jpg",
+      "assets/sumchoy-assets/image/China/photo5.jpg",
+    ],
+  },
+  {
+    name: "Japan",
+    photos: [
+      "assets/sumchoy-assets/image/Japan/photo1.jpg",
+      "assets/sumchoy-assets/image/Japan/photo2.jpg",
+      "assets/sumchoy-assets/image/Japan/photo3.jpg",
+      "assets/sumchoy-assets/image/Japan/photo4.jpg",
+      "assets/sumchoy-assets/image/Japan/photo5.jpg",
+    ],
+  },
+];
 
   let countryIndex = 0;
   let photoIndex = 0;
@@ -61,24 +59,32 @@ document.addEventListener("DOMContentLoaded", () => {
     photoEl.alt = `Sum Choy in ${country.name}`;
   }
 
+  function nextPhoto() {
+    const country = countries[countryIndex];
+    photoIndex = (photoIndex + 1) % country.photos.length;
+    render();
+  }
+
+  function prevPhoto() {
+    const country = countries[countryIndex];
+    photoIndex = (photoIndex - 1 + country.photos.length) % country.photos.length;
+    render();
+  }
+
   function startTimer() {
     clearInterval(timer);
-    timer = setInterval(() => {
-      const country = countries[countryIndex];
-      photoIndex = (photoIndex + 1) % country.photos.length;
-      render();
-    }, 7000);
+    timer = setInterval(nextPhoto, 7000);
   }
 
-  function goToCountry(newIndex) {
-    countryIndex = (newIndex + countries.length) % countries.length;
-    photoIndex = 0;
-    render();
+  // Arrows now move photos within the current country
+  prevBtn.addEventListener("click", () => {
+    prevPhoto();
+    startTimer(); // reset the auto-timer so it doesn't jump right after a manual click
+  });
+  nextBtn.addEventListener("click", () => {
+    nextPhoto();
     startTimer();
-  }
-
-  prevBtn.addEventListener("click", () => goToCountry(countryIndex - 1));
-  nextBtn.addEventListener("click", () => goToCountry(countryIndex + 1));
+  });
 
   render();
   startTimer();
