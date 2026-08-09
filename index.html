@@ -16,21 +16,30 @@
 <body>
 
     <header>
-<nav class="navbar navbar-expand-lg navbar-fishing sticky-top py-3">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Empty</a>
-    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<nav class="navbar navbar-expand-lg navbar-wl fixed-top py-3">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <!-- LOGO — top-left box -->
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="assests\Main - assets\Logo_friends&hobbies.svg" alt="Friends & Hobbies logo" class="navbar-logo">
+      
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
-        <li class="nav-item"><a class="nav-link" href="sumchoy-hobbies(1).html">SUM CHOY (HOBBIES)</a></li>
-        <li class="nav-item"><a class="nav-link" href="jiaxuan-hobbies(1).html">JIA XUAN (HOBBIES)</a></li>
-      </ul>
+
+    <!-- ALL NAV LINKS — grouped together in one box, top-right -->
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <div class="navbar-nav nav-links-group">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="sumchoy-hobbies(1).html" class="nav-link">Sum Choy (Hobbies)</a>
+        <a href="jiaxuan-hobbies(1).html" class="nav-link">Jia Xuan (Hobbies)</a>
+      </div>
     </div>
+
   </div>
 </nav>
     </header>
@@ -40,27 +49,20 @@
   <!-- ===== HERO + STATS + INTRO HEADING — one continuous background ===== -->
   <div class="intro-block">
 
-    <header class="hero pt-5 pb-0">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-7">
-            <span class="stamp mb-3">👋 Two friends, two hobbies</span>
-            <h1 class="my-4">We're Sum Choy<br>and Jia Xuan.</h1>
-            <p class="text-muted-custom fs-5 mb-4" style="max-width: 48ch;">
-              [Write 2–3 sentences here: who you both are, what this site is
-              for, and why you're sharing your hobbies.]
-            </p>
-            <div class="d-flex gap-3 flex-wrap">
-              <a href="sumchoy-hobbies(1).html" class="btn btn-wl-primary">See our hobbies</a>
-              <a href="contact.html" class="btn btn-wl-outline">Join us</a>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <img src="assests\sumchoy - assets\image\nobackgr.png" alt="Sum Choy and Jia Xuan" class="img-fluid rounded-4 shadow">
-          </div>
-        </div>
-      </div>
-    </header>
+    <header class="hero-fullpage">
+  <div class="hero-fullpage-overlay"></div>
+  <div class="container hero-fullpage-content">
+    <span class="stamp mb-3">👋 Two friends, two hobbies</span>
+    <h1 class="my-4">We're Sum Choy<br>and Jia Xuan.</h1>
+    <p class="fs-5 mb-4" style="max-width: 48ch; color: #fff;">
+      [We are two students who created this website to share our personal hobbies and interests. Through this site, we hope to introduce our hobbies to others and show how these activities bring enjoyment and meaning to our lives.]
+    </p>
+    <div class="d-flex gap-3 flex-wrap">
+      <a href="sumchoy-hobbies(1).html" class="btn btn-wl-primary">See our hobbies</a>
+      <a href="contact.html" class="btn btn-wl-outline-light">Join us</a>
+    </div>
+  </div>
+</header>
 
     <!-- STATS STRIP — no separate background anymore, just spacing -->
     <section class="py-5">
@@ -167,5 +169,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/manifesto.js"></script>
 </body>
 </html>

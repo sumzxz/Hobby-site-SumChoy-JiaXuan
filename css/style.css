@@ -39,20 +39,20 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
 }
 
 .navbar-wl {
-  background-color: var(--nav-blue);
-  border-bottom: 3px solid var(--terracotta);
+  height: 80px;
+  overflow: visible;
+  background: transparent;   /* was var(--nav-blue) */
+  border-bottom: none;       /* removes the terracotta separator line */
+  position: fixed;           /* floats over the photo instead of pushing content down */
 }
 .navbar-wl .navbar-brand { color: #fff !important; font-family: var(--font-display); }
-.navbar-wl .navbar-brand span { color: var(--terracotta); }
+.navbar-wl .navbar-brand span { color: #fff; }
 .navbar-wl .nav-link {
-  color: #CBD8DA !important;
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  margin-left: 1.25rem;
+  color: rgba(255,255,255,0.85) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
-.navbar-wl .nav-link:hover,
-.navbar-wl .nav-link.active { color: #fff !important; }
+.navbar-wl .nav-link.active,
+.navbar-wl .nav-link:hover { color: #fff !important; }
 
 .hero { padding: 6.5rem 0 5rem; }
 
@@ -94,4 +94,107 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
   padding: 2.5rem 0;
   font-family: var(--font-mono);
   font-size: 0.78rem;
+}
+
+.logo-img {
+  height: 150px;        /* Increased height to make it clearly visible */
+  width: auto;         /* Keeps proper proportions */
+  max-height: 150px;   /* Prevents navbar clipping */
+  display: block;
+  object-fit: contain;
+}
+
+.manifesto-text {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 640px;
+  color: var(--ink);
+}
+.manifesto-text p {
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+  opacity: 0.4;
+  transition: letter-spacing 0.8s ease, opacity 0.8s ease;
+}
+.manifesto-text p.in-view {
+  letter-spacing: 0.01em;
+  opacity: 1;
+}
+
+.nav-links-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.nav-links-group .nav-link {
+  margin-left: 0;
+  font-size: 0.95rem;
+}
+
+/* Keep the navbar itself a fixed, normal height */
+.navbar-wl {
+  height: 80px;
+  overflow: visible; /* lets the logo poke out without stretching this bar */
+}
+.navbar-wl .container {
+  height: 100%;
+}
+
+/* Big logo, without growing the navbar around it */
+.navbar-logo {
+  height: 170px;
+  width: auto;
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-fullpage {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("assests\\Main - assets\\Singapore_Landscape.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-fullpage-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,15,10,0.55) 0%, rgba(20,15,10,0.25) 40%, rgba(20,15,10,0.6) 100%);
+  z-index: 1;
+}
+
+.hero-fullpage-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.hero-fullpage-content h1 { color: #fff; }
+.hero-fullpage-content .stamp {
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+
+.btn-wl-outline-light {
+  background: transparent;
+  border: 1.5px solid #fff;
+  color: #fff;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+}
+.btn-wl-outline-light:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
 }
