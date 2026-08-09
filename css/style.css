@@ -161,7 +161,7 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url("assests\\Main - assets\\Singapore_Landscape.jpeg");
+  background-image: url("../assets/singapore-landscape.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -197,4 +197,165 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
 .btn-wl-outline-light:hover {
   border-color: var(--terracotta);
   color: var(--terracotta);
+}
+
+/* Photo positioned roughly where the buildings sit, right side of hero */
+.hero-photo-insert {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  height: 82%;
+  width: auto;
+  max-width: 42%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* Make sure text stays above both the overlay and the inserted photo */
+.hero-fullpage-content {
+  z-index: 3;
+}
+.hero-fullpage-content .manifesto-text,
+.hero-fullpage-content .manifesto-text p {
+  color: #7ED957; /* light green */
+}
+
+.hobby-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.hobby-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(43, 36, 32, 0.14);
+}
+.hobby-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+.hobby-card-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+.hobby-card .loc {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+}
+.table-wl {
+  --bs-table-bg: transparent;
+  color: var(--ink);
+}
+.table-wl thead th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  border-bottom: 2px solid var(--border);
+}
+.table-wl td, .table-wl th {
+  border-color: var(--border);
+  vertical-align: middle;
+  padding: 0.9rem 0.75rem;
+}
+
+.cta-banner {
+  background: var(--nav-blue-dark);
+  padding: 4.5rem 0;
+}
+/* Default nav state — light text over the hero photo */
+.navbar-wl {
+  transition: background-color 0.3s ease;
+}
+
+/* Once scrolled past the hero — dark text + subtle background so it stays readable */
+.navbar-wl {
+  transition: background-color 0.3s ease;
+}
+
+.navbar-wl--scrolled {
+  background-color: rgba(251, 246, 238, 0.92) !important;
+  backdrop-filter: blur(6px);
+}
+.navbar-wl--scrolled .navbar-brand,
+.navbar-wl--scrolled .navbar-brand span {
+  color: var(--ink) !important;
+}
+.navbar-wl--scrolled .nav-link {
+  color: var(--ink) !important;
+  text-shadow: none;
+}
+.navbar-wl--scrolled .nav-link:hover,
+.navbar-wl--scrolled .nav-link.active {
+  color: var(--terracotta) !important;
+}
+
+.scramble-char {
+  color: var(--terracotta);
+}
+.nav-links-group .nav-link {
+  display: inline-block;
+  text-decoration: none;
+}
+.nav-links-group .nav-link:hover,
+.nav-links-group .nav-link:focus {
+  text-decoration: none;
+}
+.scramble-char {
+  color: var(--terracotta);
+  font-family: var(--font-mono);
+  text-decoration: none;
+}
+.nav-links-group .nav-link {
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+/* Hide the default cursor site-wide while the fish cursor is active */
+.fish-cursor-active,
+.fish-cursor-active * {
+  cursor: none !important;
+}
+
+.fish-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.water-droplet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: rgba(47, 110, 104, 0.5); /* your --teal color */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: droplet-fade 0.9s ease-out forwards;
+}
+
+@keyframes droplet-fade {
+  0% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
 }
