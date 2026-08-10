@@ -41,11 +41,12 @@
 
   <main>
 
-    <header class="hero page-hero pb-3">
-      <div class="container">
-        <p class="eyebrow mb-2">Around The World</p>
-        <h1 class="mb-3">Travelling</h1>
-        <p class="text-muted-custom fs-5" style="max-width: 60ch;">
+    <header class="hero page-hero travel-hero pb-3">
+      <div class="travel-hero-overlay"></div>
+      <div class="container position-relative" style="z-index: 2;">
+        <p class="eyebrow mb-2" style="color: rgba(255,255,255,0.75);">Around The World</p>
+        <h1 class="mb-3" style="color: #fff;">Travelling</h1>
+        <p class="fs-5" style="max-width: 60ch; color: rgba(255,255,255,0.9);">
           Four countries, one backpack that's always slightly too full.
           Click a pin to explore where I've been.
         </p>
@@ -108,14 +109,16 @@
                 </tbody>
               </table>
 
-              <a href="#" id="map-country-link" target="_blank" rel="noopener"
-                class="d-inline-flex align-items-center gap-1">
-                View this location on Google Maps ↗
-              </a>
+              <a href="#" id="map-country-link" target="_blank" rel="noopener" <div
+                class="d-flex align-items-center gap-3 flex-wrap">
+                <a href="#" id="map-country-link" target="_blank" rel="noopener">View this location on Google Maps ↗</a>
+                <a href="contact.html?hobby=travelling" class="btn btn-wl-primary btn-sm">Join me →</a>
             </div>
+            </a>
           </div>
-
         </div>
+
+      </div>
       </div>
     </section>
 
@@ -205,14 +208,15 @@
               <p class="video-panel-hint" id="video-panel-caption">Watch a clip from Vietnam</p>
               <div class="video-wrapper">
                 <video id="map-country-video" class="video-panel-media" autoplay muted loop playsinline>
-                  <source id="map-country-video-source" src="assets/sumchoy-assets/video/vietnam/motor-mountain.mp4" type="video/mp4">
+                  <source id="map-country-video-source" src="assets/sumchoy-assets/video/vietnam/motor-mountain.mp4"
+                    type="video/mp4">
                 </video>
                 <button id="video-unmute-btn" class="video-unmute-btn" aria-label="Unmute video">🔇</button>
               </div>
             </div>
 
+          </div>
         </div>
-      </div>
     </section>
 
     <!-- ===== FULL GALLERY — slow auto-sliding filmstrip ===== -->

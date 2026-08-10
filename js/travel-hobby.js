@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: "5 days",
       highlight: "Discover the charm of Hong Kong, from wandering through its nostalgic streets to uncovering hidden gems across the city. Feast on an abundance of Michelin-rated local dishes and experience the vibrant culture, flavours, and energy that make Hong Kong unforgettable.",
       desc: "5 days exploring the streets of Hong Kong, eating Michelin-rated local dishes, and discovering hidden gems across the city.",
-      mapsUrl: "https://www.google.com/maps/search/Aberdeen+Harbour+Hong+Kong",
+      mapsUrl: "https://www.google.com/maps/place/Aberdeen+Harbour,+Hong+Kong",
       video: "assets/sumchoy-assets/video/hongkong/boat-video.mp4",
       videoCaption: "Exploring Aberdeen Harbour",
       photos: [
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: "6 days",
       highlight: "Discover the modern energy of Shenzhen, where futuristic skylines meet bustling markets and vibrant street life. Explore the city’s innovative side, indulge in local flavours, and experience the unique blend of technology and tradition.",
       desc: "A futuristic city filled with culture, food, and adventure.",
-      mapsUrl: "https://www.google.com/maps/search/China",
+      mapsUrl: "https://www.google.com/maps/place/Shenzhen,+China",
       video: "assets/sumchoy-assets/video/china/table-tennis.mp4",
       videoCaption: "Playing Table Tennis in Shenzhen",
       photos: [
@@ -89,9 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: "6 days",
       highlight: "Escape to Toyama, where peaceful mountain landscapes meet traditional Japanese charm. Discover scenic countryside, fresh local seafood, and quiet streets while experiencing a more authentic side of Japan away from the crowds",
       desc: "A peaceful escape into Japan’s mountains, culture, and cuisine.",
-      mapsUrl: "https://www.google.com/maps/search/Japan",
+      mapsUrl: "https://www.google.com/maps/place/Toyama,+Japan",
       video: "assets/sumchoy-assets/video/japan/mountain-fish.mp4",
-      videoCaption: "Exploring Toyama",
+      videoCaption: "Exploring Toyama Nature and Cuisine",
       photos: [
         "assets/sumchoy-assets/image/japan/jap-boat.jpeg",
         "assets/sumchoy-assets/image/japan/jap-dog.jpeg",
