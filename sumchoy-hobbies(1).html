@@ -46,11 +46,77 @@
           </p>
         </div>
       </header>
+      <!-- ===== SUM CHOY PROFILE ===== -->
+<section class="section pt-3">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-md-5">
+        <div class="country-slider">
+          <div class="country-title-row">
+            <button class="country-title-arrow" id="country-title-prev" aria-label="Previous country">‹</button>
+            <p class="country-label" id="country-label">Vietnam</p>
+            <button class="country-title-arrow" id="country-title-next" aria-label="Next country">›</button>
+          </div>
+
+          <div class="country-photo-frame">
+            <img id="country-photo" src="assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg" alt="Sum Choy travelling" class="carousel-photo">
+            <button class="carousel-arrow-btn prev" id="country-prev" aria-label="Previous photo">‹</button>
+            <button class="carousel-arrow-btn next" id="country-next" aria-label="Next photo">›</button>
+          </div>
+
+          <div class="country-tabs" id="country-tabs">
+            <button class="country-tab active" data-index="0">Vietnam</button>
+            <button class="country-tab" data-index="1">HongKong</button>
+            <button class="country-tab" data-index="2">China</button>
+            <button class="country-tab" data-index="3">Japan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="loc">Sum Choy</div>
+        <h2 class="mt-1 mb-3">The one who under-packs</h2>
+
+        <div class="profile-tags mb-3">
+          <span class="profile-tag">Age [20]</span>
+          <span class="profile-tag">Born [May]</span>
+          <span class="profile-tag">Loves Travelling - Food - Life</span>
+        </div>
+        <p class="eyebrow mb-2">Fun Facts About Me</p>
+        <p class="text-muted-custom mb-4">
+          I love travelling because I enjoy exploring new places and cultures. My favourite trip so far was Vietnam, where I enjoyed local food and meeting new people.
+          I'm a backpacker who loves saving up for new adventures.
+        </p>
+
+        <a href="sumchoy-hobbies(1).html" class="btn btn-wl-primary">See my travel hobby →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- ===== INTERACTIVE MAP + DETAILS PANEL ===== -->
       <section class="section pt-3">
         <div class="container">
           <div class="row g-5 align-items-start">
+            <!-- ===== TRAVEL BIO (moved from About Us) ===== -->
+                <section class="pt-2 pb-4">
+                <div class="container">
+                    <div class="loc">Sum Choy</div>
+                    <h2 class="mt-1 mb-3">The one who under-packs</h2>
+                    <div class="profile-tags mb-3">
+                    <span class="profile-tag">Loves Travelling - Food - Life</span>
+                    </div>
+                    <p class="text-muted-custom" style="max-width: 65ch;">
+                    I love travelling because I enjoy exploring new places and cultures.
+                    My favourite trip so far was Vietnam, where I enjoyed local food and
+                    meeting new people. I'm a backpacker who loves saving up for new
+                    adventures.
+                    </p>
+                </div>
+                </section>
 
             <!-- LEFT: details panel + video -->
             <div class="col-lg-7">
@@ -69,7 +135,7 @@
               </div>
 
               <video controls class="w-100 rounded-4" id="map-country-video" style="max-height: 320px; object-fit: cover;">
-                <source src="assets/sumchoy-assets/video/vietnam/vietnam-clip.mp4" type="video/mp4">
+                <source src="assets\sumchoy-assets\video\vietnam\motor-mountain.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -162,5 +228,6 @@
     <script src="js/nav-scramble.js"></script>
     <script src="js/travel-map.js"></script>
     <script src="js/fish-cursor.js"></script>
+    <script src="js/country-carousel.js"></script>
 </body>
 </html>

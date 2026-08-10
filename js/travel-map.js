@@ -5,17 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const descEl = document.getElementById("map-country-desc");
   const dateEl = document.getElementById("map-country-date");
   const photoEl = document.getElementById("map-country-photo");
+  const videoEl = document.getElementById("map-country-video");
   const galleryHeading = document.getElementById("gallery-heading");
   const galleryGrid = document.getElementById("photo-gallery-grid");
   if (!pins.length) return;
 
-  // One entry per country — fill in your real details/dates/highlights
   const destinations = [
     {
       name: "Vietnam",
       place: "Sa Pa",
       date: "Visited March 2023",
       desc: "Four days trekking between rice terrace villages, sleeping in homestays and eating more sticky rice than I thought possible.",
+      video: "assets/sumchoy-assets/video/vietnam/vietnam-clip.mp4",
       photos: [
         "assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg",
         "assets/sumchoy-assets/image/Vietnam/viet-street.jpeg",
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       place: "Aberdeen Harbour",
       date: "Visited [month/year]",
       desc: "[Write 1–2 sentences about this trip — what you did, a highlight moment.]",
+      video: "assets/sumchoy-assets/video/hongkong/hongkong-clip.mp4",
       photos: [
         "assets/sumchoy-assets/image/hongkong/hk-boats.jpeg",
         "assets/sumchoy-assets/image/hongkong/hk-building.jpeg",
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       place: "[City]",
       date: "Visited [month/year]",
       desc: "[Write 1–2 sentences about this trip.]",
+      video: "assets/sumchoy-assets/video/china/china-clip.mp4",
       photos: [
         "assets/sumchoy-assets/image/china/china-streets.jpeg",
         "assets/sumchoy-assets/image/china/landscape-nature.jpeg",
@@ -55,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       place: "[City]",
       date: "Visited [month/year]",
       desc: "[Write 1–2 sentences about this trip.]",
+      video: "assets/sumchoy-assets/video/japan/japan-clip.mp4",
       photos: [
         "assets/sumchoy-assets/image/japan/jap-boat.jpeg",
         "assets/sumchoy-assets/image/japan/jap-dog.jpeg",
@@ -93,6 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
       photoEl.classList.remove("fading");
     }, 300);
 
+    if (videoEl && dest.video) {
+      videoEl.querySelector("source").src = dest.video;
+      videoEl.load();
+    }
+
     renderGallery(dest);
   }
 
@@ -105,15 +114,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   selectDestination(0);
 });
-function selectDestination(index) {
-  const dest = destinations[index];
-  // ...existing code above stays the same...
-
-  const videoEl = document.getElementById("map-country-video");
-  if (videoEl && dest.video) {
-    videoEl.querySelector("source").src = dest.video;
-    videoEl.load();
-  }
-
-  renderGallery(dest);
-}
