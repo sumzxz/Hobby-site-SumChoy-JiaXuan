@@ -411,12 +411,6 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
   border-radius: 999px;
   padding: 0.3rem 0.9rem;
 }
-<<<<<<< HEAD
-
-.scramble-char {
-  color: #D9A441; /* Accent gold color during scramble */
-  font-family: 'JetBrains Mono', monospace;
-=======
 .carousel-photo {
   height: 420px;
   object-fit: cover;
@@ -569,13 +563,6 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
   transform: scale(1.15);
 }
 
-.map-frame--small {
-  max-width: 340px;
-  margin-left: auto;
-}
-.map-frame--small .world-map-svg {
-  max-width: 300px;
-}
 .map-details-panel {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -636,15 +623,4 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-<<<<<<< HEAD
-}
-.fact-subtitle {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--ink-muted);
-  margin-top: -0.5rem;
-  margin-bottom: 0.9rem;
-=======
->>>>>>> b103d95eadd30b7e326d10e05f3c70419a3ba25e
->>>>>>> a3b804e8a0986499cfb9ca978d3dacbdd59b493d
 }
