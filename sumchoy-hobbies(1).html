@@ -1,244 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum Choy — Travelling</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum Choy — Travelling</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-wl navbar-wl--static fixed-top py-3">
-          <div class="container d-flex align-items-center justify-content-between">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-              <img src="assets\Logo_friends&hobbies.svg" alt="Friends & Hobbies logo" class="navbar-logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-              <div class="navbar-nav nav-links-group">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="contact.html" class="nav-link">Contact Us</a>
-                <a href="sumchoy-hobbies(1).html" class="nav-link active">Sum Choy (Hobbies)</a>
-                <a href="jiaxuan-hobbies(1).html" class="nav-link">Jia Xuan (Hobbies)</a>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-wl navbar-wl--static fixed-top py-3">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="assets\Logo_friends&hobbies.svg" alt="Friends & Hobbies logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+          <div class="navbar-nav nav-links-group">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+            <a href="sumchoy-hobbies(1).html" class="nav-link active">Sum Choy (Hobbies)</a>
+            <a href="jiaxuan-hobbies(1).html" class="nav-link">Jia Xuan (Hobbies)</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <header class="hero page-hero pb-3">
+      <div class="container">
+        <p class="eyebrow mb-2">Around The World</p>
+        <h1 class="mb-3">Travelling</h1>
+        <p class="text-muted-custom fs-5" style="max-width: 60ch;">
+          Four countries, one backpack that's always slightly too full.
+          Click a pin to explore where I've been.
+        </p>
+      </div>
+    </header>
+    <!-- ===== TRAVEL CAROUSEL + DETAILS ===== -->
+    <section class="section pt-3">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+
+          <!-- LEFT: photo carousel (photos auto-cycle within the country) -->
+          <div class="col-lg-6">
+            <div class="country-slider">
+              <div class="country-title-row">
+                <button class="country-title-arrow" id="country-title-prev" aria-label="Previous country">‹</button>
+                <p class="country-label" id="country-label">Vietnam</p>
+                <button class="country-title-arrow" id="country-title-next" aria-label="Next country">›</button>
+              </div>
+
+              <div class="country-photo-frame">
+                <img id="country-photo" src="assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg"
+                  alt="Sum Choy travelling" class="carousel-photo">
+                <button class="carousel-arrow-btn prev" id="country-prev" aria-label="Previous photo">‹</button>
+                <button class="carousel-arrow-btn next" id="country-next" aria-label="Next photo">›</button>
+              </div>
+
+              <div class="country-tabs" id="country-tabs">
+                <button class="country-tab active" data-index="0">Vietnam</button>
+                <button class="country-tab" data-index="1">Hong Kong</button>
+                <button class="country-tab" data-index="2">China</button>
+                <button class="country-tab" data-index="3">Japan</button>
               </div>
             </div>
           </div>
-        </nav>
-    </header>
 
-    <main>
+          <!-- RIGHT: details panel — updates only when COUNTRY changes -->
+          <div class="col-lg-6">
+            <div class="map-details-panel">
+              <p class="eyebrow mb-2" id="map-country-label">Vietnam</p>
+              <h2 class="mb-3" id="map-country-place">Sa Pa</h2>
+              <p class="text-muted-custom mb-3" id="map-country-desc">
+                Four days trekking between rice terrace villages, sleeping
+                in homestays and eating more sticky rice than I thought possible.
+              </p>
 
-      <header class="hero page-hero pb-3">
-        <div class="container">
-          <p class="eyebrow mb-2">Around The World</p>
-          <h1 class="mb-3">Travelling</h1>
-          <p class="text-muted-custom fs-5" style="max-width: 60ch;">
-            Four countries, one backpack that's always slightly too full.
-            Click a pin to explore where I've been.
-          </p>
-        </div>
-      </header>
-      <!-- ===== SUM CHOY PROFILE ===== -->
-<section class="section pt-3">
-  <div class="container">
-    <div class="row align-items-center g-5">
+              <table class="table table-wl mb-3">
+                <tbody>
+                  <tr>
+                    <th scope="row">Visited</th>
+                    <td id="map-country-date">March 2023</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Duration</th>
+                    <td id="map-country-duration">4 days</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Highlight</th>
+                    <td id="map-country-highlight">Sunrise over the rice terraces</td>
+                  </tr>
+                </tbody>
+              </table>
 
-      <div class="col-md-5">
-        <div class="country-slider">
-          <div class="country-title-row">
-            <button class="country-title-arrow" id="country-title-prev" aria-label="Previous country">‹</button>
-            <p class="country-label" id="country-label">Vietnam</p>
-            <button class="country-title-arrow" id="country-title-next" aria-label="Next country">›</button>
+              <a href="#" id="map-country-link" target="_blank" rel="noopener"
+                class="d-inline-flex align-items-center gap-1">
+                View this location on Google Maps ↗
+              </a>
+            </div>
           </div>
 
-          <div class="country-photo-frame">
-            <img id="country-photo" src="assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg" alt="Sum Choy travelling" class="carousel-photo">
-            <button class="carousel-arrow-btn prev" id="country-prev" aria-label="Previous photo">‹</button>
-            <button class="carousel-arrow-btn next" id="country-next" aria-label="Next photo">›</button>
-          </div>
-
-          <div class="country-tabs" id="country-tabs">
-            <button class="country-tab active" data-index="0">Vietnam</button>
-            <button class="country-tab" data-index="1">HongKong</button>
-            <button class="country-tab" data-index="2">China</button>
-            <button class="country-tab" data-index="3">Japan</button>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="col-md-7">
-        <div class="loc">Sum Choy</div>
-        <h2 class="mt-1 mb-3">The one who under-packs</h2>
+    <!-- ===== GLOBE + VIDEO ===== -->
+    <section class="section section-panel">
+      <div class="container">
+        <div class="row g-5 align-items-start">
 
-        <div class="profile-tags mb-3">
-          <span class="profile-tag">Loves Travelling - Food - Life</span>
-        </div>
-        <p class="eyebrow mb-2">Fun Facts About Me</p>
-        <p class="text-muted-custom mb-4">
-          I love travelling because I enjoy exploring new places and cultures. My favourite trip so far was Vietnam, where I enjoyed local food and meeting new people.
-          I'm a backpacker who loves saving up for new adventures.
-        </p>
+          <!-- LEFT: globe -->
+          <div class="col-lg-5">
+            <div class="map-frame">
+              <svg viewBox="0 0 500 500" class="world-map-svg">
+                <circle cx="250" cy="250" r="220" class="globe-sphere" />
 
-        <a href="contact.html" class="btn btn-wl-primary">Join me on my next trip! →</a>
-      </div>
+                <path d="M170 240 Q210 215 250 235 Q270 260 245 285 Q210 300 180 280 Q160 260 170 240 Z"
+                  class="globe-landmass globe-landmass--green" />
+                <path d="M300 150 Q345 130 385 155 Q400 180 370 200 Q335 205 305 185 Q290 165 300 150 Z"
+                  class="globe-landmass globe-landmass--brown" />
+                <path d="M230 320 Q265 305 295 325 Q300 350 270 360 Q240 355 225 335 Q222 325 230 320 Z"
+                  class="globe-landmass globe-landmass--green" />
 
-    </div>
-  </div>
-</section>
+                <ellipse cx="250" cy="120" rx="205" ry="28" class="globe-grid" />
+                <ellipse cx="250" cy="190" rx="218" ry="55" class="globe-grid" />
+                <ellipse cx="250" cy="250" rx="220" ry="70" class="globe-grid" />
+                <ellipse cx="250" cy="310" rx="218" ry="55" class="globe-grid" />
+                <ellipse cx="250" cy="380" rx="205" ry="28" class="globe-grid" />
+                <ellipse cx="250" cy="250" rx="220" ry="220" class="globe-grid" />
+                <ellipse cx="250" cy="250" rx="150" ry="220" class="globe-grid" />
+                <ellipse cx="250" cy="250" rx="70" ry="220" class="globe-grid" />
+                <line x1="250" y1="30" x2="250" y2="470" class="globe-grid" />
 
+                <g class="map-pin active" data-index="0" tabindex="0" role="button" aria-label="Vietnam"
+                  style="transform-origin: 270px 300px;">
+                  <path
+                    d="M270 286 C278 286 284 292 284 300 C284 310 270 324 270 324 C270 324 256 310 256 300 C256 292 262 286 270 286 Z"
+                    class="pin-shape" />
+                  <circle cx="270" cy="300" r="3.5" class="pin-shape-hole" />
+                  <g class="pin-tooltip">
+                    <rect x="235" y="256" width="70" height="22" rx="5" class="pin-tooltip-bg" />
+                    <text x="270" y="271" text-anchor="middle" class="pin-tooltip-text">Vietnam</text>
+                  </g>
+                </g>
 
-<!-- ===== INTERACTIVE MAP + DETAILS PANEL ===== -->
-      <section class="section pt-3">
-        <div class="container">
-          <div class="row g-5 align-items-start">
+                <g class="map-pin" data-index="1" tabindex="0" role="button" aria-label="Hong Kong"
+                  style="transform-origin: 340px 230px;">
+                  <path
+                    d="M340 216 C348 216 354 222 354 230 C354 240 340 254 340 254 C340 254 326 240 326 230 C326 222 332 216 340 216 Z"
+                    class="pin-shape" />
+                  <circle cx="340" cy="230" r="3.5" class="pin-shape-hole" />
+                  <g class="pin-tooltip">
+                    <rect x="295" y="186" width="90" height="22" rx="5" class="pin-tooltip-bg" />
+                    <text x="340" y="201" text-anchor="middle" class="pin-tooltip-text">Hong Kong</text>
+                  </g>
+                </g>
 
-            <!-- LEFT: details panel + video -->
-            <div class="col-lg-7">
-              <div class="map-details-panel mb-4">
-                <p class="eyebrow mb-2" id="map-country-label">Vietnam</p>
-                <h2 class="mb-3" id="map-country-place">Sa Pa</h2>
-                <p class="text-muted-custom mb-3" id="map-country-desc">
-                  Four days trekking between rice terrace villages, sleeping
-                  in homestays and eating more sticky rice than I thought
-                  possible.
-                </p>
-                <div class="profile-tags mb-4">
-                  <span class="profile-tag" id="map-country-date">Visited March 2023</span>
-                </div>
-                <img id="map-country-photo" src="assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg" alt="Vietnam" class="map-details-photo">
-              </div>
+                <g class="map-pin" data-index="2" tabindex="0" role="button" aria-label="China"
+                  style="transform-origin: 290px 160px;">
+                  <path
+                    d="M290 146 C298 146 304 152 304 160 C304 170 290 184 290 184 C290 184 276 170 276 160 C276 152 282 146 290 146 Z"
+                    class="pin-shape" />
+                  <circle cx="290" cy="160" r="3.5" class="pin-shape-hole" />
+                  <g class="pin-tooltip">
+                    <rect x="258" y="116" width="64" height="22" rx="5" class="pin-tooltip-bg" />
+                    <text x="290" y="131" text-anchor="middle" class="pin-tooltip-text">China</text>
+                  </g>
+                </g>
 
-              <video controls class="w-100 rounded-4" id="map-country-video" style="max-height: 320px; object-fit: cover;">
-                <source src="assets\sumchoy-assets\video\vietnam\motor-mountain.mp4" type="video/mp4">
+                <g class="map-pin" data-index="3" tabindex="0" role="button" aria-label="Japan"
+                  style="transform-origin: 380px 130px;">
+                  <path
+                    d="M380 116 C388 116 394 122 394 130 C394 140 380 154 380 154 C380 154 366 140 366 130 C366 122 372 116 380 116 Z"
+                    class="pin-shape" />
+                  <circle cx="380" cy="130" r="3.5" class="pin-shape-hole" />
+                  <g class="pin-tooltip">
+                    <rect x="348" y="86" width="64" height="22" rx="5" class="pin-tooltip-bg" />
+                    <text x="380" y="101" text-anchor="middle" class="pin-tooltip-text">Japan</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- RIGHT: video box, same size regardless of content -->
+          <div class="col-lg-7">
+            <div class="video-panel">
+              <video id="map-country-video" class="video-panel-media" autoplay muted loop playsinline>
+                <source id="map-country-video-source" src="assets/sumchoy-assets/video/vietnam/motor-mountain.mp4"
+                  type="video/mp4">
                 Your browser does not support the video tag.
               </video>
+              <p class="video-panel-caption">Click a pin to explore where I've been.</p>
             </div>
-
-            <!-- RIGHT: small globe -->
-            <div class="col-lg-5">
-              <div class="map-frame map-frame--small">
-                <svg viewBox="0 0 500 500" class="world-map-svg">
-                    <circle cx="250" cy="250" r="220" class="globe-sphere"/>
-
-                    <path d="M180 200 Q220 180 260 195 Q290 210 270 240 Q240 260 200 250 Q170 230 180 200 Z" class="globe-landmass"/>
-                    <path d="M300 160 Q350 145 390 170 Q400 195 370 210 Q335 215 310 195 Q295 175 300 160 Z" class="globe-landmass"/>
-                    <path d="M240 300 Q280 290 310 310 Q315 335 285 345 Q250 340 235 320 Q230 305 240 300 Z" class="globe-landmass"/>
-
-                    <ellipse cx="250" cy="120" rx="205" ry="28" class="globe-grid"/>
-                    <ellipse cx="250" cy="190" rx="218" ry="55" class="globe-grid"/>
-                    <ellipse cx="250" cy="250" rx="220" ry="70" class="globe-grid"/>
-                    <ellipse cx="250" cy="310" rx="218" ry="55" class="globe-grid"/>
-                    <ellipse cx="250" cy="380" rx="205" ry="28" class="globe-grid"/>
-                    <ellipse cx="250" cy="250" rx="220" ry="220" class="globe-grid"/>
-                    <ellipse cx="250" cy="250" rx="150" ry="220" class="globe-grid"/>
-                    <ellipse cx="250" cy="250" rx="70" ry="220" class="globe-grid"/>
-                    <line x1="250" y1="30" x2="250" y2="470" class="globe-grid"/>
-
-                    <g class="map-pin" data-index="0" tabindex="0" role="button" aria-label="Vietnam">
-                        <path d="M290 275 C298 275 304 281 304 289 C304 299 290 313 290 313 C290 313 276 299 276 289 C276 281 282 275 290 275 Z" class="pin-shape"/>
-                        <circle cx="290" cy="289" r="3.5" class="pin-shape-hole"/>
-                        <g class="pin-tooltip">
-                        <rect x="255" y="245" width="70" height="22" rx="5" class="pin-tooltip-bg"/>
-                        <text x="290" y="260" text-anchor="middle" class="pin-tooltip-text">Vietnam</text>
-                        </g>
-                    </g>
-
-                    <g class="map-pin" data-index="1" tabindex="0" role="button" aria-label="Hong Kong">
-                        <path d="M330 225 C338 225 344 231 344 239 C344 249 330 263 330 263 C330 263 316 249 316 239 C316 231 322 225 330 225 Z" class="pin-shape"/>
-                        <circle cx="330" cy="239" r="3.5" class="pin-shape-hole"/>
-                        <g class="pin-tooltip">
-                        <rect x="285" y="195" width="90" height="22" rx="5" class="pin-tooltip-bg"/>
-                        <text x="330" y="210" text-anchor="middle" class="pin-tooltip-text">Hong Kong</text>
-                        </g>
-                    </g>
-
-                    <g class="map-pin" data-index="2" tabindex="0" role="button" aria-label="China">
-                        <path d="M300 165 C308 165 314 171 314 179 C314 189 300 203 300 203 C300 203 286 189 286 179 C286 171 292 165 300 165 Z" class="pin-shape"/>
-                        <circle cx="300" cy="179" r="3.5" class="pin-shape-hole"/>
-                        <g class="pin-tooltip">
-                        <rect x="268" y="135" width="64" height="22" rx="5" class="pin-tooltip-bg"/>
-                        <text x="300" y="150" text-anchor="middle" class="pin-tooltip-text">China</text>
-                        </g>
-                    </g>
-
-                    <g class="map-pin" data-index="3" tabindex="0" role="button" aria-label="Japan">
-                        <path d="M360 145 C368 145 374 151 374 159 C374 169 360 183 360 183 C360 183 346 169 346 159 C346 151 352 145 360 145 Z" class="pin-shape"/>
-                        <circle cx="360" cy="159" r="3.5" class="pin-shape-hole"/>
-                        <g class="pin-tooltip">
-                        <rect x="328" y="115" width="64" height="22" rx="5" class="pin-tooltip-bg"/>
-                        <text x="360" y="130" text-anchor="middle" class="pin-tooltip-text">Japan</text>
-                        </g>
-                    </g>
-                </svg>
-              </div>
-            </div>
-
           </div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ===== FULL GALLERY (all 5 photos of the selected country) ===== -->
-      <section class="section section-panel">
-        <div class="container">
-          <p class="eyebrow mb-2">Gallery</p>
-          <h2 class="mb-4" id="gallery-heading">Vietnam, in photos</h2>
-          <div class="row g-3" id="photo-gallery-grid">
-            <!-- filled in by JS -->
-          </div>
+    <!-- ===== FULL GALLERY — slow auto-sliding filmstrip ===== -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow mb-2">Gallery</p>
+        <h2 class="mb-4" id="gallery-heading">Vietnam, in photos</h2>
+      </div>
+      <div class="gallery-marquee-viewport">
+        <div class="gallery-marquee-track" id="photo-gallery-track">
+          <!-- filled in by JS -->
         </div>
-      </section>
+      </div>
+    </section> <text x="360" y="130" text-anchor="middle" class="pin-tooltip-text">Japan</text>
+    </g>
+    </g>
+    </svg>
+    </div>
+    </div>
 
-    </main>
-
-    <footer class="footer-wl">
-        <div class="container d-flex flex-wrap justify-content-between gap-2">
-          <span>&copy; 2026 Web Dev Project Team</span>
-          <span>Built with Bootstrap 5</span>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/nav-scramble.js"></script>
-    <script src="js/travel-map.js"></script>
-    <script src="js/fish-cursor.js"></script>
-    <script src="js/country-carousel.js"></script>
+    </div>
+    </div>
+    </section>
 
 
-      <!-- ===== JOIN CTA BANNER ===== -->
-      <section class="cta-banner">
-        <div class="container text-center">
-          <p class="eyebrow mb-2" style="color: rgba(255,255,255,0.7);">Want in?</p>
-          <h2 class="mb-3" style="color: #fff;">Come travel or fish with us</h2>
-          <p class="mb-4" style="color: rgba(255,255,255,0.85); max-width: 50ch; margin-left: auto; margin-right: auto;">
-            Fill out a quick form and pick which hobby you'd like to join —
-            we'll reach out before the next trip or fishing session.
-          </p>
-          <a href="contact.html" class="btn btn-wl-primary">Join us</a>
-        </div>
-      </section>
+  </main>
 
-    </main>
+  <footer class="footer-wl">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>&copy; 2026 Web Dev Project Team</span>
+      <span>Built with Bootstrap 5</span>
+    </div>
+  </footer>
 
-    <footer class="footer-wl">
-        <div class="container d-flex flex-wrap justify-content-between gap-2">
-          <span>&copy; 2026 Web Dev Project Team</span>
-          <span>Built with Bootstrap 5</span>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/nav-scramble.js"></script>
-    <script src="js/fish-cursor.js"></script>
-    <script src="js/fun-facts-slider.js"></script>
+  <!-- ===== JOIN CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="container text-center">
+      <p class="eyebrow mb-2" style="color: rgba(255,255,255,0.7);">Want in?</p>
+      <h2 class="mb-3" style="color: #fff;">Come travel or fish with us</h2>
+      <p class="mb-4" style="color: rgba(255,255,255,0.85); max-width: 50ch; margin-left: auto; margin-right: auto;">
+        Fill out a quick form and pick which hobby you'd like to join —
+        we'll reach out before the next trip or fishing session.
+      </p>
+      <a href="contact.html" class="btn btn-wl-primary">Join us</a>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer-wl">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>&copy; 2026 Web Dev Project Team</span>
+      <span>Built with Bootstrap 5</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav-scramble.js"></script>
+  <script src="js/fish-cursor.js"></script>
+  <script src="js/travel-hobby.js"></script>
 </body>
+
 </html>
