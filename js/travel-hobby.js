@@ -132,11 +132,40 @@ document.addEventListener("DOMContentLoaded", () => {
         photoTimer = setInterval(nextPhoto, 7000);
     }
 
+    let marqueeFrame = null;
+    let marqueeX = 0;
+
     function renderGallery(country) {
-        const doubled = [...country.photos, ...country.photos]; // duplicated for seamless loop
+        cancelAnimationFrame(marqueeFrame);
+        marqueeX = 0;
+        galleryTrack.style.transform = "translateX(0px)";
+
+        const doubled = [...country.photos, ...country.photos];
         galleryTrack.innerHTML = doubled
             .map((src) => `<img src="${src}" alt="${country.name}" class="gallery-thumb">`)
             .join("");
+
+        const images = galleryTrack.querySelectorAll("img");
+        let loaded = 0;
+        images.forEach((img) => {
+            if (img.complete) { loaded++; }
+            else img.addEventListener("load", () => { loaded++; if (loaded === images.length) startMarquee(); });
+        });
+        if (loaded === images.length) startMarquee();
+    }
+
+    function startMarquee() {
+        const halfWidth = galleryTrack.scrollWidth / 2;
+        const speed = 0.4;
+
+        function step() {
+            marqueeX -= speed;
+            if (Math.abs(marqueeX) >= halfWidth) marqueeX = 0;
+            galleryTrack.style.transform = `translateX(${marqueeX}px)`;
+            marqueeFrame = requestAnimationFrame(step);
+        }
+        cancelAnimationFrame(marqueeFrame);
+        step();
     }
 
     // Only fires on COUNTRY change — not on every photo tick

@@ -1,295 +1,68 @@
 :root {
-  --primary-navy: #0d2137;
-  --secondary-navy: #162c46;
   --gold-accent: #D9A441;
   --gold-hover: #b8862d;
-  --text-dark: #212529;
-
-  /* Logo Padding Control */
-  --logo-padding-top: 0px;
-  --logo-padding-right: 0px;
-  --logo-padding-bottom: 0px;
-  --logo-padding-left: 0px;
 }
 
-/* Global Page Setup & Background */
-html, body {
-  min-height: 100vh;
-  margin: 0;
-}
-
-body {
-  font-family: 'Work Sans', sans-serif;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/jiaxuan -assets/water-background.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  color: #ffffff;
-  padding-top: 0 !important; /* Prevents top body displacement */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-}
-
-.eyebrow, .icon-mono {
-  font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.85rem;
-  display: block;
-}
-
-/* FLOATING NAVBAR CONTAINER */
-.navbar-wl {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: transparent !important;
-  border: none !important;
-  padding: 1.5rem 2rem !important; /* Proper spacing from screen edges */
-  box-sizing: border-box;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
-.navbar-wl .container,
-.navbar-wl .container-fluid {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100%;
-}
-
-/* BRAND LOGO STYLING */
-.navbar-wl .navbar-brand {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #ffffff !important;
-}
-
-.navbar-logo,
-.logo-img {
-  height: 36px !important; /* Balanced proportion for image logo */
-  max-height: 40px !important;
-  width: auto !important;
-  padding: var(--logo-padding-top) var(--logo-padding-right) var(--logo-padding-bottom) var(--logo-padding-left) !important;
-  box-sizing: border-box;
-  object-fit: contain;
-  display: block;
-}
-
-/* NAV LINKS GROUP */
-.nav-links-group,
-.navbar-wl .nav {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1.75rem !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none;
-}
-
-.nav-links-group .nav-link,
-.navbar-wl .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  padding: 0 !important;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.navbar-wl .nav-link.active,
-.navbar-wl .nav-link:hover,
-.nav-links-group .nav-link:hover,
-.nav-links-group .nav-link:focus {
-  color: #ffffff !important;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/* SCROLLED NAVBAR STATE */
-.navbar-wl--scrolled {
-  background-color: rgba(13, 33, 55, 0.92) !important;
-  backdrop-filter: blur(6px);
-}
-
-.navbar-wl--scrolled .nav-link {
-  color: #ffffff !important;
-  text-shadow: none;
-}
-
-.navbar-wl--scrolled .nav-link:hover,
-.navbar-wl--scrolled .nav-link.active {
-  color: var(--gold-accent) !important;
-}
-
-/* HERO SECTION - Clears space beneath fixed header */
-.hero,
-.hero-section {
+/* Fishing hero photo background, matching the travel-hero pattern */
+.fishing-hero {
   position: relative;
-  color: #ffffff;
+  background-image: url("../assets/jiaxuan-assets/water-background.jpg");
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
-  padding-top: 140px !important; /* Pushes content down so navbar doesn't overlap text */
 }
-
-.hero-title, 
-.hero-section h1 {
-  color: #ffffff !important;
-  font-size: 3.5rem;
-  font-weight: 300;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-/* Section Wrappers & Overlay Cards */
-.hero, .section, main, #about {
-  background: transparent !important;
-}
-
-.contour-bg {
+.fishing-hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.25;
-  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,15,10,0.5) 0%, rgba(20,15,10,0.25) 50%, rgba(20,15,10,0.55) 100%);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.max-w-700 {
-  max-width: 700px;
-}
-
-.section-card {
-  background-color: rgba(15, 23, 42, 0.75) !important;
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Filter Buttons & Dynamic Visibility */
+/* Filter buttons */
 .filter-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(43,36,32,0.06);
+  color: var(--ink);
+  border: 1px solid var(--border);
   padding: 6px 16px;
   border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
-
 .filter-btn:hover,
 .filter-btn.active {
-  background: #D9A441;
-  color: #000;
+  background: var(--gold-accent);
+  color: #1a1204;
   font-weight: 600;
-  border-color: #D9A441;
+  border-color: var(--gold-accent);
 }
+.species-hidden { display: none !important; }
 
-.species-hidden {
-  display: none !important;
-}
-
-/* Tables */
-.table-fishing {
-  color: #ffffff !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-}
-
+/* Species / gear tables — reuse your existing table-wl look */
+.table-fishing { color: var(--ink); background: transparent; }
 .table-fishing th {
-  background-color: rgba(0, 0, 0, 0.6) !important;
-  color: #D9A441 !important;
-  font-family: 'Fraunces', serif;
+  background-color: var(--bg-panel);
+  color: var(--teal);
+  font-family: var(--font-display);
 }
+.table-fishing td { border-color: var(--border); }
 
-.table-fishing td {
-  border-color: rgba(255, 255, 255, 0.1) !important;
+/* Technique cards */
+.technique-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  height: 100%;
 }
+.technique-card h5 { color: var(--teal); }
 
-/* Buttons */
-.btn-gold {
-  background-color: var(--gold-accent);
-  color: var(--primary-navy);
-  font-weight: 600;
-  border: none;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+/* Fun facts card */
+.fact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
 }
-
-.btn-gold:hover {
-  background-color: var(--gold-hover);
-  color: #ffffff;
+.fact-number-badge {
+  background: var(--gold-accent);
+  color: #1a1204;
 }
-
-/* Footer */
-.footer-fishing {
-  background-color: var(--primary-navy);
-  color: rgba(255, 255, 255, 0.7);
-  border-top: 1px solid rgba(217, 164, 65, 0.3);
-}
-
-.footer-fishing a {
-  color: var(--gold-accent);
-}
-
-.footer-fishing a:hover {
-  color: #ffffff;
-}
-
-/* Custom Fish Cursor & Droplets */
-body.fish-cursor-active,
-body.fish-cursor-active * {
-  cursor: none !important;
-}
-
-.fish-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  will-change: transform;
-}
-
-.water-droplet {
-  position: fixed;
-  pointer-events: none;
-  width: 6px;
-  height: 6px;
-  background: rgba(217, 164, 65, 0.7);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: dropFade 0.6s ease-out forwards;
-  z-index: 9998;
-}
-
-@keyframes dropFade {
-  0% {
-    opacity: 0.9;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -15px) scale(2.5);
-  }
-}
+.fact-title { color: var(--teal); }

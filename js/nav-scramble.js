@@ -15,8 +15,8 @@ class TextScramble {
     for (let i = 0; i < length; i++) {
       const from = oldText[i] || "";
       const to = newText[i] || "";
-      const start = Math.floor(Math.random() * 10);
-      const end = start + Math.floor(Math.random() * 10) + 8;
+      const start = Math.floor(Math.random() * 20);       // was *10
+      const end = start + Math.floor(Math.random() * 20) + 24; // was +10 +8
       this.queue.push({ from, to, start, end });
     }
 
@@ -36,7 +36,7 @@ class TextScramble {
         complete++;
         output += to;
       } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.05) {
+        if (!char || Math.random() < 0.06) { // was 0.12/0.28 — lower = holds each letter longer
           char = this.chars[Math.floor(Math.random() * this.chars.length)];
           this.queue[i].char = char;
         }
@@ -59,11 +59,11 @@ class TextScramble {
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".nav-links-group .nav-link").forEach((link) => {
-    // Lock each link to its natural rendered width before any scrambling starts
     const naturalWidth = link.getBoundingClientRect().width;
-    link.style.width = `${naturalWidth}px`;
+    link.style.width = `${naturalWidth + 4}px`;
     link.style.display = "inline-block";
     link.style.textAlign = "center";
+    link.style.whiteSpace = "nowrap";
 
     const originalText = link.textContent;
     const fx = new TextScramble(link);
