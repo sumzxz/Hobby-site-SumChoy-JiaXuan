@@ -135,6 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let marqueeFrame = null;
     let marqueeX = 0;
 
+    const THUMB_WIDTH = 260;
+    const THUMB_GAP = 16;
+
     function renderGallery(country) {
         cancelAnimationFrame(marqueeFrame);
         marqueeX = 0;
@@ -145,17 +148,13 @@ document.addEventListener("DOMContentLoaded", () => {
             .map((src) => `<img src="${src}" alt="${country.name}" class="gallery-thumb">`)
             .join("");
 
-        const images = galleryTrack.querySelectorAll("img");
-        let loaded = 0;
-        images.forEach((img) => {
-            if (img.complete) { loaded++; }
-            else img.addEventListener("load", () => { loaded++; if (loaded === images.length) startMarquee(); });
-        });
-        if (loaded === images.length) startMarquee();
+        const n = country.photos.length;
+        const halfWidth = n * (THUMB_WIDTH + THUMB_GAP); // exact loop point, gap included
+
+        startMarquee(halfWidth);
     }
 
-    function startMarquee() {
-        const halfWidth = galleryTrack.scrollWidth / 2;
+    function startMarquee(halfWidth) {
         const speed = 0.4;
 
         function step() {
@@ -167,7 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelAnimationFrame(marqueeFrame);
         step();
     }
-
     // Only fires on COUNTRY change — not on every photo tick
     function renderCountry() {
         const country = destinations[countryIndex];

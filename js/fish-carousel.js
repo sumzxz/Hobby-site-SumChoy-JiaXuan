@@ -11,20 +11,20 @@ const categories = [
   {
     name: "Fishing & Angling",
     photos: [
-      "assets/jiaxuan -assets/fish-pose.jpeg",
-      "assets/jiaxuan -assets/fish-haul.jpeg"
+      "assets/jiaxuan-assets/fish-pose.jpeg",
+      "assets/jiaxuan-assets/fish-haul.jpeg"
     ]
   },
   {
     name: "Badminton",
     photos: [
-      "assets/jiaxuan -assets/badminton.jpeg"
+      "assets/jiaxuan-assets/badminton.jpeg"
     ]
   },
   {
     name: "Me",
     photos: [
-      "assets/jiaxuan -assets/sitting-pose.jpeg"
+      "assets/jiaxuan-assets/sitting-pose.jpeg"
     ] 
   }
 ];
