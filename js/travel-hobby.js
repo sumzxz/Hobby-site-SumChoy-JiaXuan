@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: "6 days trekking between rice terrace villages, sleeping in homestays and eating more sticky rice than I thought possible.",
       mapsUrl: "https://www.google.com/maps/search/Sa+Pa+Vietnam",
       video: "assets/sumchoy-assets/video/vietnam/motor-mountain.mp4",
+      videoCaption: "Motorbiking the Ha Giang Loop",
       photos: [
         "assets/sumchoy-assets/image/Vietnam/vietnam-landscape.jpeg",
         "assets/sumchoy-assets/image/Vietnam/viet-street.jpeg",
@@ -53,7 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
       highlight: "Discover the charm of Hong Kong, from wandering through its nostalgic streets to uncovering hidden gems across the city. Feast on an abundance of Michelin-rated local dishes and experience the vibrant culture, flavours, and energy that make Hong Kong unforgettable.",
       desc: "5 days exploring the streets of Hong Kong, eating Michelin-rated local dishes, and discovering hidden gems across the city.",
       mapsUrl: "https://www.google.com/maps/search/Aberdeen+Harbour+Hong+Kong",
-      video: "assets/sumchoy-assets/video/hongkong/hongkong-clip.mp4",
+      video: "assets/sumchoy-assets/video/hongkong/boat-video.mp4",
+      videoCaption: "Exploring Aberdeen Harbour",
       photos: [
         "assets/sumchoy-assets/image/hongkong/hk-boats.jpeg",
         "assets/sumchoy-assets/image/hongkong/hk-building.jpeg",
@@ -70,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
       highlight: "Discover the modern energy of Shenzhen, where futuristic skylines meet bustling markets and vibrant street life. Explore the city’s innovative side, indulge in local flavours, and experience the unique blend of technology and tradition.",
       desc: "A futuristic city filled with culture, food, and adventure.",
       mapsUrl: "https://www.google.com/maps/search/China",
-      video: "assets/sumchoy-assets/video/china/china-clip.mp4",
+      video: "assets/sumchoy-assets/video/china/table-tennis.mp4",
+      videoCaption: "Playing Table Tennis in Shenzhen",
       photos: [
         "assets/sumchoy-assets/image/china/china-streets.jpeg",
         "assets/sumchoy-assets/image/china/landscape-nature.jpeg",
@@ -87,7 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
       highlight: "Escape to Toyama, where peaceful mountain landscapes meet traditional Japanese charm. Discover scenic countryside, fresh local seafood, and quiet streets while experiencing a more authentic side of Japan away from the crowds",
       desc: "A peaceful escape into Japan’s mountains, culture, and cuisine.",
       mapsUrl: "https://www.google.com/maps/search/Japan",
-      video: "assets/sumchoy-assets/video/japan/japan-clip.mp4",
+      video: "assets/sumchoy-assets/video/japan/mountain-fish.mp4",
+      videoCaption: "Exploring Toyama",
       photos: [
         "assets/sumchoy-assets/image/japan/jap-boat.jpeg",
         "assets/sumchoy-assets/image/japan/jap-dog.jpeg",
@@ -146,7 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
     durationEl.textContent = country.duration;
     highlightEl.textContent = country.highlight;
     linkEl.href = country.mapsUrl;
-
+    document.getElementById("video-panel-caption").textContent = country.videoCaption;
+    
+    
     videoSourceEl.src = country.video;
     videoEl.load();
     videoEl.play().catch(() => {}); // ignore autoplay errors on some browsers
@@ -186,4 +192,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPhoto();
   renderCountry();
   startPhotoTimer();
+});
+const unmuteBtn = document.getElementById("video-unmute-btn");
+unmuteBtn.addEventListener("click", () => {
+  videoEl.muted = !videoEl.muted;
+  unmuteBtn.textContent = videoEl.muted ? "🔇" : "🔊";
 });

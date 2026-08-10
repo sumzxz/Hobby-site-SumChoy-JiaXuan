@@ -126,6 +126,7 @@
 
           <!-- LEFT: globe -->
           <div class="col-lg-5">
+            <p class="globe-hint">Click a pin to jump to that country</p>
             <div class="map-frame">
               <svg viewBox="0 0 500 500" class="world-map-svg">
                 <circle cx="250" cy="250" r="220" class="globe-sphere" />
@@ -201,14 +202,14 @@
           <!-- RIGHT: video box, same size regardless of content -->
           <div class="col-lg-7">
             <div class="video-panel">
-              <video id="map-country-video" class="video-panel-media" autoplay muted loop playsinline>
-                <source id="map-country-video-source" src="assets/sumchoy-assets/video/vietnam/motor-mountain.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <p class="video-panel-caption">Click a pin to explore where I've been.</p>
+              <p class="video-panel-hint" id="video-panel-caption">Watch a clip from Vietnam</p>
+              <div class="video-wrapper">
+                <video id="map-country-video" class="video-panel-media" autoplay muted loop playsinline>
+                  <source id="map-country-video-source" src="assets/sumchoy-assets/video/vietnam/motor-mountain.mp4" type="video/mp4">
+                </video>
+                <button id="video-unmute-btn" class="video-unmute-btn" aria-label="Unmute video">🔇</button>
+              </div>
             </div>
-          </div>
 
         </div>
       </div>

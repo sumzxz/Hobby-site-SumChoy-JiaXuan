@@ -621,3 +621,35 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
   height: 190px;
   flex-shrink: 0;
 }
+.video-wrapper { position: relative; }
+.video-unmute-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.video-unmute-btn:hover { background: var(--terracotta); }
+.video-panel-hint {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.6rem;
+}
+.globe-hint {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.6rem;
+  text-align: center;
+}
