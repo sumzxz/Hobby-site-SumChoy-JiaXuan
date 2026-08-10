@@ -6,10 +6,21 @@
   --text-dark: #212529;
 }
 
+/* Global Page Setup & Background */
+html, body {
+  min-height: 100vh;
+  margin: 0;
+}
+
 body {
   font-family: 'Work Sans', sans-serif;
-  color: var(--text-dark);
-  background-color: #ffffff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/jiaxuan -assets/water-background.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: #ffffff;
+  padding-top: 80px; /* Prevents hero section from being covered by fixed navbar */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,36 +35,49 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
 }
 
-/* Navigation */
-.navbar-fishing {
-  background-color: var(--primary-navy);
-  border-bottom: 2px solid var(--gold-accent);
+/* TRANSPARENT FLOATING NAVBAR */
+.navbar-wl {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: transparent;
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.navbar-fishing .navbar-brand {
-  font-family: 'Fraunces', serif;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.5rem;
+/* SOLID COLOR WHEN TOUCHING CONTENT / SCROLLED */
+.navbar-wl.scrolled {
+  background-color: var(--primary-navy) !important; /* Matches your navy card/theme background */
+  border-bottom: 2px solid var(--gold-accent) !important; /* Solid gold line matching the accent border */
 }
 
-.navbar-fishing .nav-link {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+.navbar-wl .navbar-brand {
+  color: #fff !important;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+}
+
+.navbar-wl .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 
-.navbar-fishing .nav-link:hover,
-.navbar-fishing .nav-link.active {
-  color: var(--gold-accent) !important;
+.navbar-wl.scrolled .nav-link:hover,
+.navbar-wl.scrolled .nav-link.active {
+  color: var(--gold-accent) !important; /* Highlights active links in gold when solid */
+}
+/* Section Wrappers & Overlay Cards */
+.hero, .section, main, #about {
+  background: transparent !important;
 }
 
-/* Hero Banner */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
   color: #ffffff;
   overflow: hidden;
 }
@@ -77,26 +101,30 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 700px;
 }
 
+.section-card {
+  background-color: rgba(15, 23, 42, 0.75) !important;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Filter Buttons & Dynamic Visibility */
 .filter-btn {
-  background-color: #ffffff;
-  border: 1px solid #ced4da;
-  color: var(--text-dark);
-  padding: 0.375rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
   border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.filter-btn:hover {
-  background-color: #e9ecef;
-}
-
+.filter-btn:hover,
 .filter-btn.active {
-  background-color: var(--primary-navy);
-  color: #ffffff;
-  border-color: var(--primary-navy);
+  background: #D9A441;
+  color: #000;
+  font-weight: 600;
+  border-color: #D9A441;
 }
 
 .species-hidden {
@@ -104,14 +132,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Tables */
-.table-fishing thead {
-  background-color: var(--primary-navy);
-  color: #ffffff;
+.table-fishing {
+  color: #ffffff !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
-.table-fishing thead th {
+.table-fishing th {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  color: #D9A441 !important;
   font-family: 'Fraunces', serif;
-  border-bottom: 2px solid var(--gold-accent);
+}
+
+.table-fishing td {
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Buttons */
@@ -141,4 +174,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-fishing a:hover {
   color: #ffffff;
+}
+
+/* Custom Fish Cursor & Droplets */
+body.fish-cursor-active,
+body.fish-cursor-active * {
+  cursor: none !important; /* Hides standard mouse cursor */
+}
+
+.fish-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.water-droplet {
+  position: fixed;
+  pointer-events: none;
+  width: 6px;
+  height: 6px;
+  background: rgba(217, 164, 65, 0.7);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: dropFade 0.6s ease-out forwards;
+  z-index: 9998;
+}
+
+@keyframes dropFade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -15px) scale(2.5);
+  }
 }

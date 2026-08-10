@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const current = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".navbar-nav a").forEach((link) => {
-    if (link.getAttribute("href") === current) {
+  
+  document.querySelectorAll(".navbar-nav a, .nav-links-group a").forEach((link) => {
+    // Check relative href matching
+    const href = link.getAttribute("href");
+    if (href === current || (current === "" && href === "index.html")) {
       link.classList.add("active");
     }
   });
