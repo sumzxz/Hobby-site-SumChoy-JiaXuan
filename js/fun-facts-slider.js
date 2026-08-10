@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!photoEl) return;
 
   const slides = [
-    { src: "assets/sumchoy-assets/image/me/aussie.jpeg", title: "Loves dogs", subtitle: "— Best Doggie Aussie" },
-    { src: "assets/sumchoy-assets/image/me/cooking.jpeg", title: "Learning to cook", subtitle: "— Spinach & Basil Pasta" },
-    { src: "assets/sumchoy-assets/image/me/exploring-singapore.jpeg", title: "Exploring singapore", subtitle: "— Oldest Dragon Kiln in Singapore" },
-    { src: "assets/sumchoy-assets/image/me/guitar.jpeg", title: "Guitar Perfomance", subtitle: "— classical piece" },
-    { src: "assets/sumchoy-assets/image/me/spiderman.jpeg", title: "Spider-Man fan", subtitle: "— yes thats me" },
+    { src: "assets/sumchoy-assets/image/fun-facts-about-me/aussie.jpeg", title: "Loves dogs", subtitle: "— Best Doggie Aussie" },
+    { src: "assets/sumchoy-assets/image/fun-facts-about-me/cooking.jpeg", title: "Learning to cook", subtitle: "— Spinach & Basil Pasta" },
+    { src: "assets/sumchoy-assets/image/fun-facts-about-me/exploring-singapore.jpeg", title: "Exploring singapore", subtitle: "— Oldest Dragon Kiln in Singapore" },
+    { src: "assets/sumchoy-assets/image/fun-facts-about-me/guitar.jpeg", title: "Guitar Perfomance", subtitle: "— classical piece" },
+    { src: "assets/sumchoy-assets/image/fun-facts-about-me/spiderman.jpeg", title: "Spider-Man fan", subtitle: "— yes thats me" },
   ];
   let index = 0;
   let timer = null;
