@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   Object.entries(labels).forEach(([key, label]) => {
     const value = params.get(key);
-    if (!value) return; // skip fields that were disabled/irrelevant to the chosen hobby
+    if (!value) return; 
     const row = document.createElement("tr");
     row.innerHTML = `<th scope="row">${label}</th><td>${escapeHtml(value)}</td>`;
     body.appendChild(row);

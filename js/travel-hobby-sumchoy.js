@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!pins.length) return;
 
-    // ===== ONE data source driving the whole page =====
     const destinations = [
         {
             name: "Vietnam",
@@ -166,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelAnimationFrame(marqueeFrame);
         step();
     }
-    // Only fires on COUNTRY change — not on every photo tick
     function renderCountry() {
         const country = destinations[countryIndex];
 
@@ -200,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startPhotoTimer();
     }
 
-    // ===== Event wiring =====
+
     photoPrevBtn.addEventListener("click", () => { prevPhoto(); startPhotoTimer(); });
     photoNextBtn.addEventListener("click", () => { nextPhoto(); startPhotoTimer(); });
     titlePrevBtn.addEventListener("click", () => goToCountry(countryIndex - 1));
@@ -216,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Initial paint
+
     renderPhoto();
     renderCountry();
     startPhotoTimer();

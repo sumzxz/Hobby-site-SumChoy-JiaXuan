@@ -3,7 +3,7 @@
   --gold-hover: #b8862d;
 }
 
-/* Fishing hero photo background, matching the travel-hero pattern */
+
 .fishing-hero {
   position: relative;
   background-image: url("../assets/jiaxuan-assets/water-background.jpg");
@@ -11,21 +11,23 @@
   background-position: center;
   overflow: hidden;
 }
+
 .fishing-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20,15,10,0.5) 0%, rgba(20,15,10,0.25) 50%, rgba(20,15,10,0.55) 100%);
+  background: linear-gradient(180deg, rgba(20, 15, 10, 0.5) 0%, rgba(20, 15, 10, 0.25) 50%, rgba(20, 15, 10, 0.55) 100%);
 }
 
-/* Filter buttons */
+
 .filter-btn {
-  background: rgba(43,36,32,0.06);
+  background: rgba(43, 36, 32, 0.06);
   color: var(--ink);
   border: 1px solid var(--border);
   padding: 6px 16px;
   border-radius: 20px;
   transition: all 0.2s ease;
 }
+
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--gold-accent);
@@ -33,18 +35,27 @@
   font-weight: 600;
   border-color: var(--gold-accent);
 }
-.species-hidden { display: none !important; }
 
-/* Species / gear tables — reuse your existing table-wl look */
-.table-fishing { color: var(--ink); background: transparent; }
+.species-hidden {
+  display: none !important;
+}
+
+.table-fishing {
+  color: var(--ink);
+  background: transparent;
+}
+
 .table-fishing th {
   background-color: var(--bg-panel);
   color: var(--teal);
   font-family: var(--font-display);
 }
-.table-fishing td { border-color: var(--border); }
 
-/* Technique cards */
+.table-fishing td {
+  border-color: var(--border);
+}
+
+
 .technique-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -52,17 +63,24 @@
   padding: 1.25rem;
   height: 100%;
 }
-.technique-card h5 { color: var(--teal); }
 
-/* Fun facts card */
+.technique-card h5 {
+  color: var(--teal);
+}
+
+
 .fact-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
 }
+
 .fact-number-badge {
   background: var(--gold-accent);
   color: #1a1204;
 }
-.fact-title { color: var(--teal); }
+
+.fact-title {
+  color: var(--teal);
+}

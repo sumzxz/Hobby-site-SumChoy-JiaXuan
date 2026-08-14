@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Only run on non-touch devices — cursor effects don't make sense on mobile
   if (window.matchMedia("(pointer: coarse)").matches) return;
 
-  // Create the fish cursor element
   const fish = document.createElement("div");
   fish.className = "fish-cursor";
   fish.innerHTML = `
@@ -24,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    // Throttle trail droplets so we're not spawning one every single pixel
+
     const now = Date.now();
     if (now - lastTrailTime > 60) {
       spawnDroplet(e.clientX, e.clientY);
@@ -39,17 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
     drop.style.top = `${y}px`;
     document.body.appendChild(drop);
 
-    // Remove from the DOM once its fade-out animation finishes
+
     drop.addEventListener("animationend", () => drop.remove());
   }
 
   function animateFish() {
-    // Ease the fish toward the real cursor position — gives a slight
-    // "swimming behind the cursor" lag instead of teleporting exactly onto it
     fishX += (mouseX - fishX) * 0.18;
     fishY += (mouseY - fishY) * 0.18;
 
-    // Flip the fish to face the direction it's currently moving
+
     const facingLeft = mouseX < fishX;
     fish.style.transform = `translate(${fishX - 17}px, ${fishY - 9}px) scaleX(${facingLeft ? -1 : 1})`;
 

@@ -7,27 +7,27 @@ function initFishCarousel() {
 
   if (!label || !photoEl) return;
 
-const categories = [
-  {
-    name: "Fishing & Angling",
-    photos: [
-      "assets/jiaxuan-assets/fish-pose.jpeg",
-      "assets/jiaxuan-assets/fish-haul.jpeg"
-    ]
-  },
-  {
-    name: "Badminton",
-    photos: [
-      "assets/jiaxuan-assets/badminton.jpeg"
-    ]
-  },
-  {
-    name: "Me",
-    photos: [
-      "assets/jiaxuan-assets/sitting-pose.jpeg"
-    ] 
-  }
-];
+  const categories = [
+    {
+      name: "Fishing & Angling",
+      photos: [
+        "assets/jiaxuan-assets/fish-pose.jpeg",
+        "assets/jiaxuan-assets/fish-haul.jpeg"
+      ]
+    },
+    {
+      name: "Badminton",
+      photos: [
+        "assets/jiaxuan-assets/badminton.jpeg"
+      ]
+    },
+    {
+      name: "Me",
+      photos: [
+        "assets/jiaxuan-assets/sitting-pose.jpeg"
+      ]
+    }
+  ];
 
   let categoryIndex = 0;
   let photoIndex = 0;
@@ -108,7 +108,6 @@ const categories = [
   startTimer();
 }
 
-// Guarantees execution whether DOMContentLoaded has already fired or not
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initFishCarousel);
 } else {

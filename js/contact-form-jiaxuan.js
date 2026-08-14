@@ -3,9 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const hobbySelect = document.getElementById("hobbySelect");
   const fieldGroups = document.querySelectorAll(".hobby-fields");
   const heroEl = document.getElementById("contact-hero");
+  const dateInputs = document.querySelectorAll('input[type="date"]');
+  const today = new Date();
+  const minDate = today.toISOString().split("T")[0];
+  const maxDateObj = new Date(today);
+  maxDateObj.setFullYear(maxDateObj.getFullYear() + 2);
+  const maxDate = maxDateObj.toISOString().split("T")[0];
+  dateInputs.forEach((input) => {
+    input.setAttribute("min", minDate);
+    input.setAttribute("max", maxDate);
+  });
+  
 
-  // Backgrounds per hobby — swap these paths to your real images.
-  // Jia Xuan: change the "fishing" path below to whichever background you pick.
+
   const heroBackgrounds = {
     travelling: "assets/sumchoy-assets/image/nature-landscape.jpeg",
     fishing: "assets/jiaxuan-assets/image/fishing-background.jpeg",
@@ -16,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isMatch = group.dataset.hobby === hobby;
       group.hidden = !isMatch;
       group.querySelectorAll("input, select").forEach((field) => {
-        field.disabled = !isMatch; // disabled fields are excluded from submission entirely
+        field.disabled = !isMatch;
       });
     });
 
@@ -25,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Pre-select hobby from URL, e.g. contact.html?hobby=travelling
+
   const urlParams = new URLSearchParams(window.location.search);
   const selectedHobby = urlParams.get("hobby");
   if (selectedHobby) hobbySelect.value = selectedHobby;
